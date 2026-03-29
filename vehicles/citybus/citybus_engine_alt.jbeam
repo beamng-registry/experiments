@@ -1,0 +1,595 @@
+{
+"citybus_engine_alt": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Belasco-Diesel 900CUI I6 Diesel Engine",
+        "value":11000,
+    },
+    "slotType" : "citybus_engine",
+    "slots": [
+        ["type", "default", "description"],
+        //engine
+        ["citybus_transmission","citybus_transmission_4A", "Transmission"],
+        ["citybus_radiator","citybus_radiator", "Radiator"],
+        ["citybus_turbo","citybus_turbo_280", "Intake", {"coreSlot":true}],
+        ["citybus_engine_ecu","citybus_engine_ecu", "Engine Management", {"coreSlot":true}],
+        ["citybus_oilpan","citybus_oilpan", "Oil Pan", {"coreSlot":true}],
+        //exhaust and intake are linked from body section because they mount to body
+        ["n2o_system","", "Nitrous Oxide System"],
+        ["citybus_engine_internals","citybus_engine_internals", "Engine Long Block", {"coreSlot":true}],
+        ["citybus_air_compressor", "citybus_air_compressor", "Air Compressor"],
+        // TODO: Move this to citybus_frame.jbeam?
+        ["citybus_air_tank", "citybus_air_tank", "Air Tank"],
+        ["citybus_auxilliary_air_tank", "citybus_auxilliary_air_tank", "Auxilliary Air Tank"],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine":{
+        "torque":[
+            ["rpm", "torque"],
+            [0,      0],
+            [250,  420],
+            [500,  591],
+            [750,  680],
+            [1000, 732],
+            [1250, 759],
+            [1500, 771],
+            [1750, 760],
+            [2000, 726],
+            [2250, 679],
+            [2500, 615],
+            [2750, 516],
+            [3000, 394],
+            [3250, 240],
+            [3500, 86],
+        ],
+        "torqueCompressionBrake":[
+            ["rpm", "torque"],
+            [0,      0],
+            [1000, 700],
+            [2500, 850],
+            [3000, 1500],
+            [5000, 1500],
+        ],
+        "idleRPM":600,
+        "maxRPM":2700,
+        "inertia":2.5,
+        "friction":37,
+        "idleRPMRoughness":150,
+        "revLimiterType":"soft",
+        "dynamicFriction":0.3,
+        "engineBrakeTorque":120,
+        "burnEfficiency":[
+            [0,   0.20],
+            [0.1, 0.25],
+            [0.3, 0.32],
+            [0.4, 0.46],
+            [0.7, 0.44],
+            [1,   0.42],
+        ],
+        //fuel system
+        "energyStorage": "mainTank",
+        "requiredEnergyType":"diesel",
+
+        //exhaust
+        "particulates":0.15,
+        "instantAfterFireCoef": 0.0,
+        "sustainedAfterFireCoef": 0.0,
+
+        //cooling and oil system
+        "thermalsEnabled":true,
+        "engineBlockMaterial":"iron",
+        "oilVolume":25,
+        "engineBlockAirCoolingEfficiency":70,
+
+        //engine durability
+        "maxTorqueRating": 3300,
+        "maxOverTorqueDamage": 1300,
+        "cylinderWallTemperatureDamageThreshold":160,
+        "headGasketDamageThreshold":1500000,
+        "pistonRingDamageThreshold":1500000,
+        "connectingRodDamageThreshold":1500000,
+
+        //node beam interface
+        "torqueReactionNodes:":["en4l","en3l","en1r"],
+        "waterDamage": {"[engineGroup]:":["intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+
+        "soundConfig": "soundConfig",
+        "soundConfigExhaust": "soundConfigExhaust",
+
+        //starter motor
+        "starterSample":"event:>Engine>Starter>i6diesel_bus_eng",
+        "shutOffSampleEngine":"event:>Engine>Shutoff>i6diesel_bus_eng",
+        "starterVolume":0.76,
+        "shutOffVolumeEngine":0.76,
+        "starterThrottleKillTime":1.3,
+        "idleRPMStartRate":2,
+        "idleRPMStartCoef":0.5,
+
+        //engine deform groups
+        "deformGroups":["mainEngine", "mainEngine_intake", "mainEngine_accessories"]
+        "deformGroups_oilPan":["oilpan_damage"]
+    },
+    "soundConfig": {
+        "sampleName": "I6D_bus_engine",
+
+        "mainGain": -2,
+        "onLoadGain":1.0,
+        "offLoadGain":0.70,
+
+        "maxLoadMix": 1.0,
+        "minLoadMix": 0.0,
+
+        "lowShelfGain":0,
+        "lowShelfFreq":80,
+
+        "highShelfGain":4,
+        "highShelfFreq":4500,
+
+        "eqLowGain": -3,
+        "eqLowFreq": 250,
+        "eqLowWidth": 0.1,
+
+        "eqHighGain": -8,
+        "eqHighFreq": 1600,
+        "eqHighWidth": 0.1,
+
+        "fundamentalFrequencyCylinderCount":6,
+        "eqFundamentalGain": 0,
+    },
+    "soundConfigExhaust": {
+        "sampleName": "I6D_semi_exhaust",
+
+        "mainGain": -1,
+        "onLoadGain":1.0,
+        "offLoadGain":0.35,
+
+        "maxLoadMix": 1.0,
+        "minLoadMix": 0,
+
+        "lowShelfGain":4,
+        "lowShelfFreq":110,
+
+        "highShelfGain":6,
+        "highShelfFreq":3000,
+
+        "eqLowGain": 0,
+        "eqLowFreq": 120,
+        "eqLowWidth": 0.1,
+
+        "eqHighGain": 0,
+        "eqHighFreq": 2400,
+        "eqHighWidth": 0.1,
+
+        "fundamentalFrequencyCylinderCount":6,
+        "eqFundamentalGain": 2,
+    },
+    "vehicleController": {
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["citybus_engine", ["citybus_engine_R","citybus_engine_L"]],
+         ["citybus_compressor", ["citybus_frame"]],
+         {"deformGroup":"mainEngine_accessories", "deformMaterialBase":"citybus", "deformMaterialDamaged":"invis"},
+         ["citybus_pipes", ["citybus_frame_upper","citybus_engine_L","citybus_engine_piping"]],
+         ["citybus_compressorbelt", ["citybus_frame","citybus_engine_R","citybus_engine_L"]],
+         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"selfCollision":true},
+        {"collision":true},
+        //--ENGINE CUBE--
+        {"nodeWeight":125},
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"group":"citybus_engine_L"},
+        {"engineGroup":"engine_block"},
+        ["en1l", 0.24, 6.03, 0.44,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":700,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":600,"baseTemp":"thermals","conductionRadius":0.21}],
+        ["en2l", 0.24, 5.2, 0.36,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":700,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":600,"baseTemp":"thermals","conductionRadius":0.21}],
+        ["en3l", 0.24, 5.95, 1.42,{"chemEnergy":1000,"burnRate":0.39,"flashPoint":700,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":600,"baseTemp":"thermals","conductionRadius":0.21}],
+        ["en4l", 0.24, 5.12, 1.35,{"isExhaust":"mainEngine","chemEnergy":1000,"burnRate":0.39,"flashPoint":700,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":600,"baseTemp":"thermals","conductionRadius":0.21}],
+        {"group":"citybus_engine_R"},
+        ["en1r", -0.24, 6.03, 0.44],
+        {"engineGroup":["engine_block","exhaust_manifold"]},
+        ["en2r", -0.24, 5.2, 0.36],
+        {"engineGroup":"engine_block"},
+        ["en3r", -0.24, 5.95, 1.42],
+        ["en4r", -0.24, 5.12, 1.35],
+        {"group":"citybus_engine_piping"},
+        {"nodeWeight":2.5},
+        ["in0",  -0.78, 5.55, 1.46, {"engineGroup":"intake"}],
+        ["ex0",   1.06, 6.02, 1.35],
+        ["ex6",   1.06, 6.02, 1.75],
+        {"engineGroup":""},
+        {"selfCollision":true},
+        {"collision":true},
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //--ENGINE CUBE--
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":20001000,"beamDamp":5000},
+        {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+        {"deformGroup":"mainEngine", "deformationTriggerRatio":0.001},
+        ["en1r","en1l"],
+        ["en1r","en2r"],
+        ["en1r","en2l"],
+        ["en1r","en3r"],
+        ["en1r","en3l"],
+        ["en1r","en4r"],
+        ["en1r","en4l"],
+        ["en1l","en2r"],
+        ["en1l","en2l"],
+        ["en1l","en3r"],
+        ["en1l","en3l"],
+        ["en1l","en4r"],
+        ["en1l","en4l"],
+        ["en2r","en2l"],
+        ["en2r","en3r"],
+        ["en2r","en3l"],
+        ["en2r","en4r"],
+        ["en2r","en4l"],
+        ["en2l","en3r"],
+        ["en2l","en3l"],
+        ["en2l","en4r"],
+        ["en2l","en4l"],
+        ["en3r","en3l"],
+        ["en3r","en4r"],
+        ["en3r","en4l"],
+        ["en3l","en4r"],
+        ["en3l","en4l", {"isExhaust":"mainEngine"}],
+        ["en4r","en4l"],
+
+        //engine mounts
+        {"beamSpring":4001000,"beamDamp":2500},
+        {"beamDeform":50000,"beamStrength":295000},
+        {"deformGroup":"mainEngine_accessories","deformationTriggerRatio":0.1},
+        ["en1l", "fm18l", {"name":"engine","disableMeshBreaking":true,"disableTriangleBreaking":true}],
+        ["en1r", "fm18r", {"name":"engine","disableMeshBreaking":true,"disableTriangleBreaking":true}],
+        ["en3r", "fm18r"],
+        ["en3l", "fm18l"],
+        ["en1r", "fm18l"],
+        ["en1l", "fm18r"],
+
+        ["en2l", "fs16l"],
+        ["en2r", "fs16r"],
+
+        ["en2l", "fm16l"],
+        ["en2r", "fm16r"],
+
+        ["en4l", "fm16l"],
+        ["en4r", "fm16l"],
+
+        //engine piping
+        {"beamSpring":51000,"beamDamp":500},
+        {"beamDeform":2000,"beamStrength":5000},
+        {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.01}
+        ["ex0", "ex6", {"isExhaust":"mainEngine"}],
+        ["ex0", "en3l", {"isExhaust":"mainEngine"}],
+        ["ex0", "en4l"],
+        ["ex0", "en1l"],
+        {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.01}
+        ["ex6", "en3l"],
+        ["ex6", "en4l"],
+        {"beamDeform":2000,"beamStrength":10000},
+        {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.01}
+        ["en3r", "in0"],
+        ["en4r", "in0"],
+        ["en1r", "in0"],
+        ["en2r", "in0"],
+        {"deformGroup":"", "deformationTriggerRatio":""}
+
+        //limiters
+        {"beamType":"|SUPPORT", "beamLongBound":5},
+        {"beamSpring":10001000,"beamDamp":250},
+        {"beamDeform":150000,"beamStrength":850000},
+        {"beamPrecompression":0.8},
+        ["en4l", "sm18r"],
+        ["en4r", "sm18l"],
+        ["en2l", "fm18r"],
+        ["en2r", "fm18l"],
+
+        ["en1l", "fm18ll"],
+        ["en1r", "fm18rr"],
+        ["en2r", "fm16rr"],
+        ["en2l", "fm16ll"],
+
+        ["sp16l", "en2r"],
+        ["sp16r", "en2l"],
+        ["sp18l", "en1r"],
+        ["sp18r", "en1l"],
+        {"beamPrecompression":1},
+        {"deformGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":5.63},
+        {"groundModel":"metal"},
+        {"optional":true},
+        ["en1r", "tra2r", "en4r"],
+        ["en4r", "en3r", "en1r"],
+        ["en1r", "en1l", "tra2l"],
+        ["tra2l", "tra2r", "en1r"],
+        ["en3l", "en1l", "en1r"],
+        ["en1r", "en3r", "en3l"],
+        ["en4r", "tra2r", "tra2l"],
+        ["tra2l", "en4l", "en4r"],
+        ["en3r", "en4r", "en4l"],
+        ["en4l", "en3l", "en3r"],
+        ["tra2l", "en1l", "en3l"],
+        ["en3l", "en4l", "tra2l"],
+        ["tra2l", "en1l","en4l"],
+        ["en3l", "en4l", "en1l"],
+        {"optional":false},
+
+        {"triangleType":"NONCOLLIDABLE"},
+        ["ex6", "ex0", "en3l"],
+        ["en3r", "in0", "en4r"],
+        {"triangleType":"NORMALTYPE"},
+        {"group":""},
+    ],
+},
+"citybus_oilpan": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Oil Pan",
+        "value":90,
+    },
+    "slotType" : "citybus_oilpan",
+    "mainEngine": {
+        //cooling and oil system
+        "oilVolume":37,
+
+        //engine durability
+        "oilpanMaximumSafeG": 1.1
+
+        //node beam interface
+        "oilpanNodes:":["oilpan","oilref"],
+
+        //engine deform groups
+        "deformGroups_oilPan":["oilpan_damage"]
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         //oil pan node
+         {"group":""},
+         {"nodeWeight":2},
+         ["oilpan", 0.0, 5.50, 0.37],
+         ["oilref", 0.0, 5.50, 0.84, {"nodeWeight":1, "collision":false}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //oilpan node
+          {"beamSpring":1501000,"beamDamp":250},
+          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"oilpan_damage","deformationTriggerRatio":0.005},
+          ["oilpan", "en1r"],
+          ["oilpan", "en1l"],
+          ["oilpan", "en2r"],
+          ["oilpan", "en2l"],
+          ["oilpan", "en3r"],
+          ["oilpan", "en3l"],
+          ["oilpan", "en4r"],
+          ["oilpan", "en4l"],
+          {"deformGroup":"", "deformationTriggerRatio":""},
+
+          //oil ref
+          {"beamSpring":1001000,"beamDamp":150},
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          ["oilref", "en1r"],
+          ["oilref", "en1l"],
+          ["oilref", "en2r"],
+          ["oilref", "en2l"],
+          ["oilref", "en3r"],
+          ["oilref", "en3l"],
+          ["oilref", "en4r"],
+          ["oilref", "en4l"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"citybus_engine_ecu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Engine Management",
+        "value":750,
+    },
+    "slotType" : "citybus_engine_ecu",
+    "mainEngine":{
+    },
+},
+"citybus_engine_internals": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Stock Long Block",
+        "value":800,
+    },
+    "slotType" : "citybus_engine_internals",
+    "mainEngine":{
+    },
+},
+"citybus_airfilter": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Air Filter",
+        "value":450,
+    },
+    "slotType" : "citybus_airfilter",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["citybus_airfilter", ["citybus_frame_upper"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         //--Air Filter-
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"nodeWeight":2.0},
+         {"group":"citybus_airfilter"},
+         ["in0",-1.2, 5.85, 2.1, {"engineGroup":"intake"}],
+         {"group":""},
+    ],
+
+    "beams": [
+          ["id1:", "id2:"],
+          //--AIR FILTER--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"deformLimitExpansion":1.1},
+          {"beamSpring":51000,"beamDamp":250},
+          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intake", "deformationTriggerRatio":0.01},
+          ["in0", "sp17rr"],
+          ["in0", "st17rr"],
+          ["in0", "st18rr"],
+          ["in0", "sp18rr"],
+          {"deformGroup":"", "deformationTriggerRatio":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"citybus_turbo_280": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"T280 Turbocharger",
+        "value":4400,
+    },
+    "slotType" : "citybus_turbo",
+    "flexbodies": [
+        ["mesh", "[group]:"],
+    ],
+    "turbocharger": {
+        "hissLoopEvent":"event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_hiss",
+        "whineLoopEvent":"event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_spin",
+        "bovEnabled":false,
+        "bovSoundVolumeCoef":0.0,
+        "hissVolumePerPSI": 0.0,
+        "whineVolumePer10kRPM": 0.05,
+        "whinePitchPer10kRPM": 0.074,
+        "wastegateStart":24,
+        "wastegateLimit":25,
+        "maxExhaustPower": 10000,
+        "backPressureCoef": 0.00006,
+        "frictionCoef": 12,
+        "inertia":15,
+        "damageThresholdTemperature": 750,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         0],
+            [30000,     8],
+            [60000,     14],
+            [90000,     28],
+            [150000,    38],
+            [200000,    44],
+            [250000,    51],
+            [300000,    55],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,        0,     0],
+            [200,   0.37,   0.1],
+            [400,   0.51,  0.30],
+            [600,   0.64,  0.54],
+            [800,   0.75,  0.75],
+            [1000,  0.78,  0.87],
+            [1200,  0.79,   0.9],
+            [1400,  0.78,  0.87],
+            [1500,  0.775,  0.81],
+            [1600,  0.77,  0.75],
+            [1800,  0.76,  0.67],
+            [2000,  0.74,  0.59],
+            [2200,  0.66,   0.51],
+            [2400,  0.61,   0.43],
+            [2600,  0.50,   0.35],
+            [2800,  0.33,   0.26],
+            [3000,  0.22,   0.18],
+        ],
+    },
+    "mainEngine": {
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        //turbocharger deform groups
+        "deformGroups_turbo":["mainEngine_turbo","mainEngine_intercooler","mainEngine_piping"]
+    },
+},
+"citybus_turbo_350": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"T350 Turbocharger",
+        "value":6000,
+    },
+    "slotType" : "citybus_turbo",
+    "flexbodies": [
+        ["mesh", "[group]:"],
+    ],
+    "turbocharger": {
+        "hissLoopEvent":"event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_hiss",
+        "whineLoopEvent":"event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_spin",
+        "bovEnabled":false,
+        "bovSoundVolumeCoef":0.0,
+        "hissVolumePerPSI": 0.0,
+        "whineVolumePer10kRPM": 0.06,
+        "whinePitchPer10kRPM": 0.074,
+        "wastegateStart":34,
+        "wastegateLimit":35,
+        "maxExhaustPower": 14000,
+        "backPressureCoef": 0.00005,
+        "frictionCoef": 12,
+        "inertia":15,
+        "damageThresholdTemperature": 750,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+            [0,         0],
+            [30000,     9],
+            [60000,  16.5],
+            [90000,     30],
+            [150000,    41],
+            [200000,    48],
+            [250000,    56],
+            [300000,    61],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,        0,     0],
+            [200,   0.37,   0.1],
+            [400,   0.51,  0.30],
+            [600,   0.63,  0.54],
+            [800,   0.76,  0.75],
+            [1000,  0.77,  0.87],
+            [1200,  0.78,   0.9],
+            [1400,  0.785,  0.87],
+            [1500,  0.779,  0.81],
+            [1600,  0.776,  0.75],
+            [1800,  0.772,  0.67],
+            [2000,  0.768,  0.59],
+            [2200,  0.71,   0.51],
+            [2400,  0.64,   0.43],
+            [2600,  0.53,   0.35],
+            [2800,  0.33,   0.26],
+            [3000,  0.22,   0.18],
+        ],
+    },
+    "mainEngine": {
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        "$+particulates":0.1,
+        //turbocharger deform groups
+        "deformGroups_turbo":["mainEngine_turbo","mainEngine_intercooler","mainEngine_piping"]
+    },
+},
+}

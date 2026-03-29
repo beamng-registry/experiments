@@ -1,5 +1,7 @@
 @echo off
 
+
+del "%destinationZip%" /y 2>nul
 :: --- EXECUTION ---
 echo Compressing %sourceDir% into %destinationZip%...
 "C:\Program Files\7-Zip\7z.exe" a -tzip citybus.zip vehicles
