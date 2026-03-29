@@ -52,9 +52,9 @@
             {"pressurePSI":"$tirepressure_F"},
             {"dragCoef":5.63},
 
-            {"frictionCoef":0.95},
-            {"slidingFrictionCoef":0.95},
-            {"treadCoef":0.58},
+            {"frictionCoef":0.8},
+            {"slidingFrictionCoef":0.8},
+            {"treadCoef":0.5},
 
             {"noLoadCoef":1.12},
             {"loadSensitivitySlope":0.0000085},

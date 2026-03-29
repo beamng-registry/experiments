@@ -74,7 +74,7 @@
         "requiredEnergyType":"diesel",
 
         //exhaust
-        "particulates":0.15,
+        "particulates":1.15,
         "instantAfterFireCoef": 0.0,
         "sustainedAfterFireCoef": 0.0,
 

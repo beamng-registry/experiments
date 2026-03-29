@@ -31,14 +31,17 @@
     },
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
+         //brake drums
          ["citybus_brakedrum_F", ["wheel_FL","wheel_FR","wheelhub_FR","wheelhub_FL"]],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
-        {"brakeTorque":12600},
+        //brake properties
+        {"brakeTorque":"$=$brakestrength*24000"},
         {"parkingTorque":0},
         {"brakeSpring":200},
 
+        //brake thermals
         {"enableBrakeThermals":true},
         {"brakeDiameter":0.35},
         {"brakeMass":45.0},
@@ -79,14 +82,17 @@
     },
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
+         //brake drums
          ["citybus_brakedrum_R", ["wheel_RL","wheel_RR","wheelhub_RR","wheelhub_RL"]],
     ],
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
-        {"brakeTorque":16800},
+        //brake properties
+        {"brakeTorque":"$=$brakestrength*32000"},
         {"parkingTorque":0},
         {"brakeSpring":200},
 
+        //brake thermals
         {"enableBrakeThermals":true},
         {"brakeDiameter":0.35},
         {"brakeMass":55},
