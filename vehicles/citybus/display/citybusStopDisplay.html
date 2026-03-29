@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="citybusDisplay">
+  <head>
+    <script src="/ui/lib/ext/angular/angular.js"></script>
+    <script src="citybusStopDisplay.js"></script>
+    <link type="text/css" rel="stylesheet" href="citybusStopDisplay.css">
+  </head>
+  <body>
+    <div ng-controller="CityBusStopController as stopCtrl">
+      <!-- header -->
+      <div class="displayHeader">
+        <div class="time">{{stopCtrl.time}}</div>
+        <img class="logo" src='/ui/images/beamng_logo_50x50.png'/>
+      </div>
+      <!-- route -->
+      <div class="displayRoute">
+        <div class="route">
+          <div ng-bind-html="stopCtrl.routeID"></div>
+          <div class="chevron" ></div>
+        </div>
+        <div class="destination">
+          <div class="title">
+            <div ng-bind-html="stopCtrl.direction"></div>
+          </div>
+        </div>
+      </div>
+      <!-- stops -->
+      <div class="displayStops" ng-if="stopCtrl.stopsList.length > 0">
+        <div ng-repeat="stop in stopCtrl.stopsList">
+          <div class="bullet">
+              <div class="chevron" ng-style="{'border-bottom-color': stopCtrl.routeColor}" style="top: -15px;"></div>
+              <div class="body" ng-style="{'background-color': stopCtrl.routeColor}"></div>
+              <div class="chevron" style="bottom: 0; border-bottom:15px solid white"></div>
+          </div>
+          <div class="stopContainer">
+            <div class="title">
+              {{stop}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="displayFooter">
+        <div class="chevron" ng-style="{'border-bottom-color': stopCtrl.routeColor}"></div>
+        <div class="nextStop"ng-style="{'background-color': stopCtrl.routeColor}">Next Stop</div>
+        <div class="nextStopTitle" ng-style="{'background-color': stopCtrl.routeColor}">
+          <div class="title">{{stopCtrl.nextStop}}</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+<body>
+<!--script type="text/javascript" src="platefont.js"></script-->
+<style>
+body {
+  margin:0;
+  padding:0;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  overflow:hidden;
+  background: black;
+}
+#canvas {
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+</style>
+<div id="container" style="width: 256px; height: 16px">
+  <canvas id="canvas" width="256" height="16"></canvas>
+</div>
+<script type="text/javascript" src="citybusDisplayFont.js"></script>
+<script>
+function upscale(context, x,y, scale){
+  var m_canvas = document.createElement('canvas');
+    m_canvas.width = x;
+    m_canvas.height = y;
+    var m_context = m_canvas.getContext('2d');
+    m_context.drawImage(canvas, 0, 0, x, y, 0, 0, x, y);
+    canvas.width = x*scale;
+    canvas.height = y*scale;
+    var ct = document.getElementById('container');
+    ct.style.height = canvas.height+"px";
+    ct.style.width = canvas.width+"px";
+    // turn off image aliasing
+    context.webkitImageSmoothingEnabled = false;
+    context.imageSmoothingEnabled = false;
+
+    // enlarge the minimized image to full size    
+    context.drawImage(m_canvas, 0, 0, x, y, 0, 0, canvas.width, canvas.height);
+}
+
+String.prototype.replaceAt=function(index, replacement) {
+    return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+}
+
+function parseTxt(txt,route){
+  var ptxt = txt.toString().toUpperCase();
+  ptxt = ptxt.replace(/(\[BNG\])/g, "a");
+  ptxt = ptxt.replace(/(\[BUS\])/g, "b");
+  ptxt = ptxt.replace(/(\[AIR\])/g, "c");
+  ptxt = ptxt.replace(/(\[ROTR\])/g, "d");
+  ptxt = ptxt.replace(/(\[ROTL\])/g, "e");
+
+  if(route){
+    for(var i=0; i<ptxt.length;i++){
+      var c = ptxt.charCodeAt(i); 
+      if(c>=48 && c<=57){
+        c += 64;
+        ptxt = ptxt.replaceAt(i,String.fromCharCode(c));
+      }
+    }
+  }
+  return ptxt;
+}
+
+var frontWidth = 170;
+var rearWidth = 36;
+
+function update(data) {
+  console.warn(data);
+  var mode = "diffuse"/*data.mode*/;
+  var text = parseTxt(data.direction,false);
+  var routeTxt = parseTxt(data.routeID,true);
+  var design = null;
+
+  if(design == null) {
+      design = {
+        "name" : "Default",
+        "version" : 1,
+        "data" : {
+            "size" : {"x" : 256, "y": 16},
+            "text" : { "x" : 0.5, "y" : 1.0, "scale" : 1, "color" : "white", "limit" : 20},
+            "diffuse" : {
+                "spriteImg" : "vehicles/citybus/citybus_sign_character_atlas.png",
+                //"backgroundImg" : "vehicles/common/licenseplates/default/licenseplate-default_d.png",
+                "fillStyle" : "black"
+            },
+
+            "bump" : {
+                "spriteImg" : "vehicles/common/licenseplates/default/platefont_n.png",
+                //"backgroundImg" : "vehicles/common/licenseplates/default/licenseplate-default_n.png",
+                "fillStyle" : "rgb(0,0,255)"
+            },
+
+            "specular" : {
+                "spriteImg" : "vehicles/common/licenseplates/default/platefont_s.png",
+                "fillStyle" : "rgb(233,233,233)"
+            }
+        }
+    };
+  }
+
+  if(design.data.text.limit) {
+    text = text.substring(0, design.data.text.limit);
+  }
+
+  // preprocess the font file a bit to make the job below easier: array>map and parseInt()
+  
+  //var font = design.data.characterLayout;
+  font.charMap = {};
+  for(var i = 0; i < font.chars.count; i++) {
+      for(var d in font.chars.char[i]) {
+        font.chars.char[i][d] = parseInt(font.chars.char[i][d])
+      }
+      font.charMap[parseInt(font.chars.char[i].id)] = font.chars.char[i];
+  }
+  // load the canvas
+  var canvas = document.getElementById('canvas');
+  canvas.width = design.data.size.x;
+  canvas.height = design.data.size.y;
+  var ctx = canvas.getContext('2d');
+
+  // figure out what images to load
+  if(design.data[mode] == null) {
+    console.log(mode + " is not a valid mode");
+    return;
+  }
+
+  var background = null;
+  var sprites = null;
+
+  var checkRender = function() {
+    ctx.fillStyle = design.data[mode].fillStyle;
+
+    // draw static color background
+    ctx.rect(0, 0, canvas.width, canvas.height);
+    ctx.fill();
+
+    // dont render until all reasources are loaded
+    if( (background && !background.isLoaded) || !sprites.isLoaded) return;
+
+    if( background ) {
+      ctx.drawImage(background, 0, 0, background.naturalWidth, background.naturalHeight, 0, 0, canvas.width, canvas.height);
+    }
+
+    // tint the character sheet if necesary
+    var tintSprites = sprites;
+    /*if( mode == "diffuse") {
+      tintSprites = document.createElement('canvas');
+      tintSprites.width = sprites.width;
+      tintSprites.height = sprites.height;
+      var tintCtx = tintSprites.getContext('2d');
+
+      tintCtx.fillStyle = design.data.text.color;
+      tintCtx.fillRect(0, 0, tintSprites.width, tintSprites.height);
+
+      tintCtx.globalCompositeOperation = "multiply";
+      tintCtx.drawImage(sprites, 0, 0);
+
+      tintCtx.globalCompositeOperation = "destination-in";
+      tintCtx.drawImage(sprites, 0, 0);
+    }*/
+
+    // walk the text
+    var lineHeight = parseInt(font.common.lineHeight)
+    var lineBase = parseInt(font.common.base)
+    var scale = design.data.text.scale;
+
+    //reset scale
+    upscale(ctx, design.data.size.x, design.data.size.y, 1);
+
+    // now place the text in the center
+    var x = canvas.width * design.data.text.x - textWidth * 0.5
+    var y = canvas.height * design.data.text.y - lineHeight * 0.5;
+
+    ///////////////////////////////////////////////////
+    //draw route number
+    y= 22;x=-1;
+    for(var ci = 0; ci < routeTxt.length; ci++) {
+      var c = routeTxt.charCodeAt(ci)
+
+      // find the correct char in the atlas
+      if(font.charMap[c] === undefined) {
+        console.log("character not found: ", c)
+        continue;
+      }
+      var glyph = font.charMap[c];
+      //console.log(c, glyph)
+
+      if((x+glyph.xadvance)>rearWidth){break;}//not bigger than rear display
+
+      // and paint it
+      var w = glyph.width;
+      var h = glyph.height;
+      ctx.drawImage(tintSprites,
+        glyph.x, glyph.y, w, h,
+        x + glyph.xoffset * scale, y - (lineHeight - lineBase) - glyph.yoffset * scale, w * scale, h * scale);
+
+      // move to the right: TODO: move to the next line
+      x += glyph.xadvance * scale;
+    }
+
+    var routeWidth = x;
+
+    // first: calculate the text width
+    var textWidth = 0
+    for(var ci = 0; ci < text.length; ci++) {
+      var c = text.charCodeAt(ci)
+      if(font.charMap[c] === undefined) continue;
+      var glyph = font.charMap[c];
+      if((textWidth+glyph.xadvance) > (frontWidth - routeWidth)){
+        text = text.substring(0, ci);
+        break;
+      }
+      textWidth += /*glyph.width * scale +*/ glyph.xadvance * scale;
+    }
+
+    var x = (frontWidth -routeWidth - textWidth) * 0.5 + routeWidth;
+    console.log('starting pos:',x, y, textWidth, canvas.width, lineHeight, canvas.height)
+    for(var ci = 0; ci < text.length; ci++) {
+      var c = text.charCodeAt(ci)
+
+      // find the correct char in the atlas
+      if(font.charMap[c] === undefined) {
+        console.log("character not found: ", c, String.fromCharCode(c))
+        continue;
+      }
+      var glyph = font.charMap[c];
+      //console.log(c, glyph)
+
+      // and paint it
+      var w = glyph.width;
+      var h = glyph.height;
+      ctx.drawImage(tintSprites,
+        glyph.x, glyph.y, w, h,
+        x + glyph.xoffset * scale, y - (lineHeight - lineBase) - glyph.yoffset * scale, w * scale, h * scale);
+
+      // move to the right: TODO: move to the next line
+      x += glyph.xadvance * scale;
+    }
+
+    //copie route to rear display
+    var rearBegin = (rearWidth - routeWidth ) * 0.5 + design.data.size.x - rearWidth;
+    rearBegin = Math.floor(rearBegin);
+    ctx.drawImage(canvas, 0, 0, routeWidth, y, rearBegin, 0, routeWidth, y);
+
+
+    //draw line limit of displays
+    /*ctx.strokeStyle = "red";
+    ctx.beginPath();
+    ctx.moveTo(frontWidth, 0);
+    ctx.lineTo(frontWidth, y);
+    ctx.moveTo(design.data.size.x-rearWidth, 0);
+    ctx.lineTo(design.data.size.x-rearWidth, y);
+    ctx.stroke();*/
+
+    if(typeof beamng !== 'undefined') {
+      upscale(ctx, design.data.size.x, design.data.size.y, 2);
+      beamng.uiUpdate();
+      //beamng.uiDestroy();
+    }
+    else{
+      upscale(ctx, design.data.size.x, design.data.size.y, 4);
+    }
+  }
+
+  // load background image
+  /*if(design.data[mode].backgroundImg !== undefined) {
+    background = new Image();
+    background.src = "local://local/" + design.data[mode].backgroundImg;
+    background.addEventListener("load", function() { background.isLoaded = true; checkRender(); });
+  }
+
+  // then the sprites / text*/
+  sprites = new Image();
+  if (typeof beamng === 'undefined')
+    sprites.src = "citybus_sign_character_atlas.png";
+  else
+    sprites.src = "local://local/" + design.data[mode].spriteImg;
+  sprites.addEventListener("load", function() { sprites.isLoaded = true; checkRender(); }, false);
+  
+}
+/// for debugging inside the browser:
+if(typeof beamng === 'undefined') {
+  var testText = 'CREPE[bng][bus][air]000000000';
+  var data = {direction: testText, routeID:"[air]", mode:'diffuse'}
+  update(data);
+  //init('bump', testText);
+  //init('specular', testText);
+}
+</script>
+</body></html>

@@ -1,0 +1,282 @@
+{
+"citybus_ramplow": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ram Plow",
+        "value":55000,
+    },
+    "slotType" : "citybus_bumper_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["ramplow_low", ["citybus_ramplow"], [], {"pos":{"x":0, "y":-6.2, "z":0.7}}],
+    ],
+    "sounds": {
+        //overwrite windbuffet sound location
+        "windNode":"rp2"
+    },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         //--ramp plow--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"citybus_ramplow"},
+         {"nodeWeight":45},
+         ["rp1rrr", -1.78400, -6.71700, 0.13300],
+         ["rp1rr", -1.56900, -6.34800, 0.75700],
+         ["rp1r", -0.93500, -6.41700, 1.38100],
+         ["rp1", 0.00000, -6.42200, 1.69300],
+         ["rp1l", 0.93500, -6.41700, 1.38100],
+         ["rp1ll", 1.56900, -6.34800, 0.75700],
+         ["rp1lll", 1.78400, -6.71700, 0.13300],
+
+         ["rp2rrr", -0.94300, -7.74200, 0.13300],
+         ["rp2rr", -0.82200, -7.56200, 0.46400],
+         ["rp2r", -0.48700, -7.60650, 0.79300],
+         ["rp2", 0.00000, -7.61500, 0.95400],
+         ["rp2l", 0.48700, -7.60650, 0.79300],
+         ["rp2ll", 0.82200, -7.56200, 0.46400],
+         ["rp2lll", 0.94300, -7.74200, 0.13300],
+
+         //tip
+         ["rp3", 0.00000, -9.00000, 0.13300],
+
+         //middle nodes
+         ["rp4", 0.00000, -6.71700, 0.13300],
+         ["rp5", 0.00000, -6.34800, 0.75700],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //--RAM PLOW--
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":48001000,"beamDamp":350},
+          {"beamDeform":880000,"beamStrength":"FLT_MAX"},
+          //main shape
+          ["rp1rrr","rp1rr"],
+          ["rp1rr","rp1r"],
+          ["rp1r","rp1"],
+          ["rp1lll","rp1ll"],
+          ["rp1ll","rp1l"],
+          ["rp1l","rp1"],
+
+          ["rp2rrr","rp2rr"],
+          ["rp2rr","rp2r"],
+          ["rp2r","rp2"],
+          ["rp2lll","rp2ll"],
+          ["rp2ll","rp2l"],
+          ["rp2l","rp2"],
+
+          ["rp1rrr","rp2rrr"],
+          ["rp1rr","rp2rr"],
+          ["rp1r","rp2r"],
+          ["rp1","rp2"],
+          ["rp1l","rp2l"],
+          ["rp1ll","rp2ll"],
+          ["rp1lll","rp2lll"],
+
+          ["rp2rrr","rp3"],
+          ["rp2rr","rp3"],
+          ["rp2r","rp3"],
+          ["rp2","rp3"],
+          ["rp2l","rp3"],
+          ["rp2ll","rp3"],
+          ["rp2lll","rp3"],
+
+          //middle nodes
+          ["rp4","rp5"],
+          ["rp4","rp3"],
+          ["rp4","rp1rrr"],
+          ["rp4","rp1lll"],
+          ["rp5","rp1rr"],
+          ["rp5","rp1ll"],
+          ["rp5","rp1"],
+
+          //crossing
+          {"beamDeform":480000,"beamStrength":"FLT_MAX"},
+
+          ["rp1rrr","rp2rr"],
+          ["rp1rr","rp2rrr"],
+          ["rp1rr","rp2r"],
+          ["rp1r","rp2rr"],
+          ["rp1r","rp2"],
+          ["rp1","rp2r"],
+
+          ["rp1lll","rp2ll"],
+          ["rp1ll","rp2lll"],
+          ["rp1ll","rp2l"],
+          ["rp1l","rp2ll"],
+          ["rp1l","rp2"],
+          ["rp1","rp2l"],
+
+          //middle nodes
+          ["rp4","rp2lll"],
+          ["rp4","rp2rrr"],
+          ["rp4","rp1ll"],
+          ["rp4","rp1rr"],
+          ["rp5","rp1lll"],
+          ["rp5","rp1rrr"],
+          ["rp5","rp1l"],
+          ["rp5","rp1r"],
+
+
+          //rigids
+          {"beamDeform":320000,"beamStrength":"FLT_MAX"},
+          ["rp1rrr","rp3"],
+          ["rp1rr","rp3"],
+          ["rp1r","rp3"],
+          ["rp1","rp3"],
+          ["rp1l","rp3"],
+          ["rp1ll","rp3"],
+          ["rp1lll","rp3"],
+
+          //
+          ["rp1rrr","rp1r"],
+          ["rp1rr","rp1"],
+          ["rp1r","rp1l"],
+          ["rp1ll","rp1"],
+          ["rp1lll","rp1l"],
+
+          ["rp2rrr","rp2r"],
+          ["rp2rr","rp2"],
+          ["rp2r","rp2l"],
+          ["rp2ll","rp2"],
+          ["rp2lll","rp2l"],
+
+          ["rp1rrr","rp1lll"],
+          ["rp1rrr","rp1ll"],
+          ["rp1rr","rp1lll"],
+          ["rp1rr","rp1ll"],
+          ["rp1r","rp1ll"],
+          ["rp1rr","rp1l"],
+
+          ["rp2rrr","rp2lll"],
+          ["rp2rrr","rp2ll"],
+          ["rp2rr","rp2lll"],
+          ["rp2rr","rp2ll"],
+          ["rp2r","rp2ll"],
+          ["rp2rr","rp2l"],
+
+          //
+          ["rp1rrr","rp2r"],
+          ["rp1lll","rp2l"],
+          ["rp1rrr","rp2"],
+          ["rp1lll","rp2"],
+          ["rp1rr","rp2"],
+          ["rp1ll","rp2"],
+
+          ["rp2rrr","rp1r"],
+          ["rp2lll","rp1l"],
+          ["rp2rrr","rp1"],
+          ["rp2lll","rp1"],
+          ["rp2rr","rp1"],
+          ["rp2ll","rp1"],
+
+          ["rp2rrr","rp1lll"],
+          ["rp1rrr","rp2lll"],
+          ["rp2rr","rp1ll"],
+          ["rp1rr","rp2ll"],
+          ["rp2r","rp1l"],
+          ["rp1r","rp2l"],
+
+          //attach
+          {"beamSpring":16001000,"beamDamp":500},
+          {"beamDeform":450000,"beamStrength":950000},
+          {"breakGroup":"ramplow_L"},
+          ["rp5", "fm1l"],
+          ["rp5", "fc1l"],
+          ["rp4", "fm1l"],
+          ["rp4", "fc1l"],
+
+          ["rp5", "fm2l"],
+          ["rp4", "fm2l"],
+          ["rp1", "fc1l"],
+          ["rp1", "fc1ll"],
+          ["rp1l", "ff1", {"beamDeform":90000,"beamStrength":750000}],
+
+          ["rp1lll", "fm1ll"],
+          ["rp1lll", "fm1l"],
+          ["rp1lll", "fc1ll"],
+          ["rp1lll", "fc1l"],
+
+          ["rp1ll", "fm1ll"],
+          ["rp1ll", "fm1l"],
+          ["rp1ll", "fc1ll"],
+          ["rp1ll", "fc1l"],
+
+          ["rp5", "fm1"],
+          ["rp5", "fc1"],
+          ["rp4", "fc1"],
+          ["rp4", "ff1"],
+
+          {"breakGroup":"ramplow_R"},
+          ["rp5", "fm1r"],
+          ["rp5", "fc1r"],
+          ["rp4", "fm1r"],
+          ["rp4", "fc1r"],
+
+          ["rp5", "fm2r"],
+          ["rp4", "fm2r"],
+          ["rp1", "fc1r"],
+          ["rp1", "fc1rr"],
+          ["rp1r", "ff1", {"beamDeform":90000,"beamStrength":750000}],
+
+          ["rp1rrr", "fm1rr"],
+          ["rp1rrr", "fm1r"],
+          ["rp1rrr", "fc1rr"],
+          ["rp1rrr", "fc1r"],
+
+          ["rp1rr", "fm1rr"],
+          ["rp1rr", "fm1r"],
+          ["rp1rr", "fc1rr"],
+          ["rp1rr", "fc1r"],
+
+          ["rp1", "ff1", {"beamDeform":90000,"beamStrength":750000}],
+          ["rp4", "fm1"],
+          ["rp5", "ff1", {"beamDeform":90000,"beamStrength":750000}],
+          ["rp1", "fc1"],
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"dragCoef":4.5},
+            {"groundModel":"metal"},
+            {"group":"citybus_ramplow"},
+            ["rp1rrr","rp2rrr","rp2rr"],
+            ["rp1rrr","rp2rr","rp1rr"],
+            ["rp1rr","rp2rr","rp2r"],
+            ["rp1rr","rp2r","rp1r"],
+            ["rp1r","rp2r","rp2"],
+            ["rp1r","rp2","rp1"],
+
+            ["rp2lll","rp1lll","rp2ll"],
+            ["rp1lll","rp1ll","rp2ll"],
+            ["rp2ll","rp1ll","rp2l"],
+            ["rp1ll","rp1l","rp2l"],
+            ["rp2l","rp1l","rp2"],
+            ["rp1l","rp1","rp2"],
+
+            ["rp2rrr","rp3","rp2rr"],
+            ["rp2rr","rp3","rp2r"],
+            ["rp2r","rp3","rp2"],
+            ["rp2ll","rp3","rp2lll"],
+            ["rp2l","rp3","rp2ll"],
+            ["rp2","rp3","rp2l"],
+
+            //bottom
+            ["rp1rrr","rp1lll","rp2lll"],
+            ["rp1rrr","rp2lll","rp2rrr"],
+            ["rp2lll","rp3","rp2rrr"],
+
+            //back
+            ["rp1ll","rp1lll","rp1rrr"],
+            ["rp1ll","rp1rrr","rp1rr"],
+            ["rp1l","rp1ll","rp1rr"],
+            ["rp1l","rp1rr","rp1r"],
+            ["rp1","rp1l","rp1r"],
+            {"group":""},
+    ],
+},
+}

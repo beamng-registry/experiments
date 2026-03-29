@@ -1,0 +1,136 @@
+{
+"citybus_wheel_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Aluminum Rear Wheels",
+        "value":1200,
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //inner
+         ["steelwheel_06a_22x10_inner", ["wheel_RR2","wheelhub_RR"], [], {"pos":{"x":-0.759, "y":3.356, "z":0.447}, "rot":{"x":17, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+         ["steelwheel_06a_22x10_inner", ["wheel_RL2","wheelhub_RL"], [], {"pos":{"x": 0.759, "y":3.356, "z":0.447}, "rot":{"x":17, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+         //outer
+         ["steelwheel_06a_22x10_outer", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-1.089, "y":3.356, "z":0.447}, "rot":{"x":17, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+         ["steelwheel_06a_22x10_outer", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x": 1.089, "y":3.356, "z":0.447}, "rot":{"x":17, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+     ],
+    "slotType" : "citybus_wheel_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["citybus_tire_R","citybus_tire_R", "Rear Tires"],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"wheelhub_RR"},
+         {"nodeWeight":35},
+         //rear hub 1
+         {"chemEnergy":200,"burnRate":0.15,"flashPoint":200,"specHeat":0.05,"smokePoint":150,"selfIgnitionCoef":false},
+         ["rw1r", -0.55, 3.356, 0.447, {"staticCollision":false}],
+         ["rw1rr", -1.12, 3.356, 0.447],
+         {"group":"wheelhub_RL"},
+         ["rw1l", 0.55, 3.356, 0.447, {"staticCollision":false}],
+         ["rw1ll", 1.12, 3.356, 0.447],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"specHeat":false,"smokePoint":false,"selfIgnitionCoef":false},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+          {"beamSpring":3001000,"beamDamp":150},
+          //wheel axis beams
+          ["rw1r","rw1rr"],
+          ["rw1l","rw1ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "pressureWheels": [
+            ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+            {"enableTireLbeams":true,"disableMeshBreaking":false,"disableHubMeshBreaking":false},
+
+            //general settings
+            {"hubRadius":0.30},
+            {"wheelOffset":-0.1},
+            {"hubWidth":0.255},
+            {"numRays":14},
+
+            //hub options
+            {"hubTreadBeamSpring":3001000, "hubTreadBeamDamp":150},
+            {"hubPeripheryBeamSpring":3001000, "hubPeripheryBeamDamp":150},
+            {"hubSideBeamSpring":4001000, "hubSideBeamDamp":150},
+            {"hubBeamDeform":150000, "hubBeamStrength":440000},
+            {"hubNodeWeight":1.7},
+            {"hubNodeMaterial":"|NM_METAL","hasTire":false},
+            {"hubFrictionCoef":0.5},
+    ],
+},
+"citybus_wheel_R_steel": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Steel Rear Wheels",
+        "value":800,
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //inner
+         ["steelwheel_12a_22x10_inner", ["wheel_RR2","wheelhub_RR"], [], {"pos":{"x":-0.759, "y":3.356, "z":0.447}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+         ["steelwheel_12a_22x10_inner", ["wheel_RL2","wheelhub_RL"], [], {"pos":{"x": 0.759, "y":3.356, "z":0.447}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+         //outer
+         ["steelwheel_12a_22x10_outer", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-1.089, "y":3.356, "z":0.447}, "rot":{"x":0, "y":0, "z":180}, "scale":{"x":1, "y":1, "z":1}}],
+         ["steelwheel_12a_22x10_outer", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x": 1.089, "y":3.356, "z":0.447}, "rot":{"x":0, "y":0, "z":0}, "scale":{"x":1, "y":1, "z":1}}],
+     ],
+    "slotType" : "citybus_wheel_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["citybus_tire_R","citybus_tire_R", "Rear Tires"],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"group":"wheelhub_RR"},
+         {"nodeWeight":35},
+         //rear hub 1
+         {"chemEnergy":200,"burnRate":0.15,"flashPoint":200,"specHeat":0.05,"smokePoint":150,"selfIgnitionCoef":false},
+         ["rw1r", -0.55, 3.356, 0.447, {"staticCollision":false}],
+         ["rw1rr", -1.12, 3.356, 0.447],
+         {"group":"wheelhub_RL"},
+         ["rw1l", 0.55, 3.356, 0.447, {"staticCollision":false}],
+         ["rw1ll", 1.12, 3.356, 0.447],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"specHeat":false,"smokePoint":false,"selfIgnitionCoef":false},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+          {"beamSpring":3001000,"beamDamp":150},
+          //wheel axis beams
+          ["rw1r","rw1rr"],
+          ["rw1l","rw1ll"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "pressureWheels": [
+            ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+            {"enableTireLbeams":true,"disableMeshBreaking":false,"disableHubMeshBreaking":false},
+
+            //general settings
+            {"hubRadius":0.30},
+            {"wheelOffset":-0.1},
+            {"hubWidth":0.255},
+            {"numRays":14},
+
+            //hub options
+            {"hubTreadBeamSpring":3501000, "hubTreadBeamDamp":150},
+            {"hubPeripheryBeamSpring":3501000, "hubPeripheryBeamDamp":150},
+            {"hubSideBeamSpring":4001000, "hubSideBeamDamp":150},
+            {"hubBeamDeform":110000, "hubBeamStrength":420000},
+            {"hubNodeWeight":2.1},
+            {"hubNodeMaterial":"|NM_METAL","hasTire":false},
+            {"hubFrictionCoef":0.5},
+    ],
+},
+}

@@ -1,0 +1,12 @@
+{
+"citybus_skin_dynamicTextures": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Dynamic Textures",
+        "isAuxiliary": true,
+        "value":1350
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "dynamicTextures"
+  },
+}

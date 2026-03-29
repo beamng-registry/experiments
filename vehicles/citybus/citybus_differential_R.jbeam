@@ -1,0 +1,118 @@
+{
+"citybus_differential_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Open Rear Differential",
+        "value":1200,
+    },
+    "slotType" : "citybus_differential_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["citybus_driveshaft","citybus_driveshaft", "Rear Driveshaft"],
+        ["citybus_finaldrive_R","citybus_finaldrive_R_404", "Rear Final Drive", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":"open", "lockTorque":1000000, "uiName":"Rear Differential","defaultVirtualInertia":4}],
+    ],
+    "differential_R": {
+        "friction": 15,
+        "dynamicFriction": 0.0071,
+        "torqueLossCoef": 0.03,
+    },
+},
+"citybus_differential_R_locking": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Locking Rear Differential",
+        "value":1600,
+    },
+    "slotType" : "citybus_differential_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["citybus_driveshaft","citybus_driveshaft", "Rear Driveshaft"],
+        ["citybus_finaldrive_R","citybus_finaldrive_R_404", "Rear Final Drive", {"coreSlot":true}],
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //rear diff
+        ["differential", "differential_R", "driveshaft", 1, {"diffType":["open","locked"], "lockTorque":1000000, "uiName":"Rear Differential","defaultVirtualInertia":4}],
+    ],
+    "differential_R": {
+        "friction": 15,
+        "dynamicFriction": 0.0071,
+        "torqueLossCoef": 0.03,
+    },
+},
+"citybus_finaldrive_R_342": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"3.42:1 Rear Final Drive",
+        "value":150,
+    },
+
+    "slotType" : "citybus_finaldrive_R",
+
+    "differential_R" : {
+        "gearRatio":3.42,
+    },
+},
+"citybus_finaldrive_R_404": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4.04:1 Rear Final Drive",
+        "value":150,
+    },
+
+    "slotType" : "citybus_finaldrive_R",
+
+    "differential_R" : {
+        "gearRatio":4.04,
+    },
+},
+"citybus_finaldrive_R_456": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"4.56:1 Rear Final Drive",
+        "value":150,
+    },
+
+    "slotType" : "citybus_finaldrive_R",
+
+    "differential_R" : {
+        "gearRatio":4.56,
+    },
+},
+"citybus_driveshaft": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Driveshaft",
+        "value":450,
+    },
+    "slotType" : "citybus_driveshaft",
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //rear driveshaft
+        ["torsionReactor", "torsionReactorR", "gearbox", 1, {}],
+        ["shaft", "driveshaft", "torsionReactorR", 1, {"breakTriggerBeam":"driveshaft", "uiName":"Rear Driveshaft", "electricsName":"driveshaft", "friction":1}],
+    ],
+    "torsionReactorR": {
+        "torqueReactionNodes:":["en4l","en3l","en1r"],
+    },
+    "props": [
+        ["func"      , "mesh"           , "idRef:", "idX:", "idY:", "baseRotation"        , "rotation"            , "translation"        , "min", "max", "offset", "multiplier",],
+        ["driveshaft", "citybus_driveshaft", "ax2r", "ax2l", "tra1",    {"x":90, "y":0, "z":0}, {"x":0, "y":1, "z":0} , {"x":0, "y":0, "z":0}, -360, 360, 0, 1,{"breakGroup":"driveshaft","deformGroup":"driveshaft","optional":true}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          //driveshaft
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.05, "beamShortBound":0.05},
+          {"beamDeform":4000,"beamStrength":6000},
+          {"beamSpring":0,"beamDamp":0},
+          {"beamLimitSpring":5001000,"beamLimitDamp":500},
+          ["ax2","tra1", {"name":"driveshaft","optional":true,"breakGroup":"driveshaft","deformGroup":"driveshaft"}],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

@@ -1,0 +1,53 @@
+{
+"citybus_adcarriers": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Ad Carriers",
+        "value":0,
+    },
+    "slotType" : "citybus_adcarriers",
+    "slots": [
+        ["type", "default", "description"],
+        ["skin_taxi_ad","taxi_ad_burger","Advertisement"],
+        ["citybus_adcarrier_FL","citybus_adcarrier_FL","Left Advertisement"],
+        ["citybus_adcarrier_FR","citybus_adcarrier_FR","Right Advertisement"],
+        ["citybus_adcarrier_R","citybus_adcarrier_R","Rear Advertisement"],
+    ],
+},
+"citybus_adcarrier_FL": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Left Advertisement",
+        "value":250,
+    },
+    "slotType" : "citybus_adcarrier_FL",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["citybus_adcarrier_queen_L", ["citybus_side_L"]],
+    ],
+},
+"citybus_adcarrier_FR": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Right Advertisement",
+        "value":250,
+    },
+    "slotType" : "citybus_adcarrier_FR",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["citybus_adcarrier_queen_R", ["citybus_side_R"]],
+    ],
+},
+"citybus_adcarrier_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Advertisement",
+        "value":250,
+    },
+    "slotType" : "citybus_adcarrier_R",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["citybus_adcarrier_tail", ["citybus_enginedoor"]],
+    ],
+},
+}

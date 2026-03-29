@@ -1,0 +1,596 @@
+{
+"citybus_axle_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Axle",
+        "value":1200,
+    },
+    "slotType" : "citybus_axle_F",
+    "slots": [
+        ["type", "default", "description"],
+        ["citybus_brake_F","citybus_brake_F","Front Brakes"],
+        ["citybus_wheel_F","citybus_wheel_F", "Front Wheels"],
+        ["citybus_wheeldata_F","citybus_wheeldata_F", "Front Spindles", {"coreSlot":true}],
+        ["citybus_shock_F","citybus_shock_F","Front Shocks"],
+        ["citybus_airbag_F","citybus_airbag_F","Front Airbags"],
+        ["citybus_steering_F","citybus_steering_F","Front Steering"],
+        ["citybus_swaybar_F","citybus_swaybar_F","Front Sway Bar"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["citybus_axle_F", ["citybus_axle_F"]],
+        ["citybus_hub_F", ["citybus_hub_F","citybus_tierod_F","wheelhub_FL","wheelhub_FR"]],
+        ["citybus_lowerarm_F", ["citybus_lowerarm_F"]],
+        ["citybus_upperarm_F", ["citybus_upperarm_F"]],
+        ["citybus_steeringarm_c", ["citybus_hub_F","citybus_steeringarm_c"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--FRONT AXLE--
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        {"collision":false},
+        {"selfCollision":false},
+        {"nodeWeight":30},
+        {"group":"citybus_axle_F"},
+        ["fax1", 0.0, -3.725, 0.444],
+        ["fax2", 0.0, -4.505, 0.444],
+        ["fax3", 0.0, -4.1, 0.62],
+
+        {"collision":true},
+        {"selfCollision":true},
+        {"group":["citybus_axle_F","citybus_lowerarm_F","citybus_swaybar"]},
+        ["fax4", 0.0, -4.1, 0.191],
+
+        {"group":["citybus_hub_F","citybus_axle_F"]},
+        ["fax3l", 0.955, -4.08, 0.62, {"group":["citybus_hub_F","citybus_axle_F","citybus_steeringarm_c"]}],
+        ["fax3r", -0.955, -4.08, 0.62],
+        ["fax4l", 0.965, -4.10, 0.19, {"group":["citybus_hub_F","citybus_axle_F","citybus_steeringarm_c","citybus_swaybar"]}],
+        ["fax4r", -0.965, -4.10, 0.19, {"group":["citybus_hub_F","citybus_axle_F","citybus_swaybar"]}],
+
+        {"group":["citybus_tierod_F","citybus_hub_F"]},
+        ["fax5l", 0.91, -3.65, 0.18],
+        ["fax5r", -0.91, -3.65, 0.18],
+        ["fax6l", 1.1, -4.34541, 0.461],
+        ["fax6r", -1.1, -4.34541, 0.461],
+
+        //steering arm
+        {"group":["citybus_steeringarm_c","citybus_steeringarm_b"]},
+        ["fax7l", 0.70, -4.135, 0.53],
+
+        //shock bottom flexbody
+        {"group":"citybus_shock_F"},
+        ["faxshl",  0.62, -3.96, 0.42],
+        ["faxshr", -0.62, -3.96, 0.42],
+
+        //upper link
+        {"selfCollision":true},
+        {"nodeWeight":30},
+        {"group":["citybus_axle_F","citybus_upperarm_F","citybus_airbag_F"]},
+        ["fax8l",  0.62, -4.09, 0.62],
+        ["fax8r", -0.62, -4.09, 0.62],
+
+        //upper link mount
+        {"selfCollision":false},
+        {"group":"citybus_upperarm_F"},
+        ["fx1l",  0.62, -4.6, 0.62],
+        ["fx1r", -0.62, -4.6, 0.62],
+
+        //upper airbag mount (flexbody helper)
+        {"group":["citybus_airbag_F","citybus_shock_F"]},
+        ["fab1l",  0.605, -4.09, 0.86],
+        ["fab1r", -0.605, -4.09, 0.86],
+        {"group":""},
+    ],
+    "rails": {
+        "faxle_l":{"links:":["fax3l", "fax3"], "looped":false, "capped":true},
+        "faxle_r":{"links:":["fax3r", "fax3"], "looped":false, "capped":true},
+    },
+    "slidenodes": [
+        ["id:", "railName", "attached", "fixToRail", "tolerance", "spring", "strength", "capStrength"],
+        ["fax8l", "faxle_l", true, true, 0, 80001000, "FLT_MAX", "FLT_MAX"],
+        ["fax8r", "faxle_r", true, true, 0, 80001000, "FLT_MAX", "FLT_MAX"],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //--FRONT AXLE--
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"deformLimitExpansion":1.1},
+        {"beamSpring":40001000,"beamDamp":1000},
+        {"beamDeform":120000,"beamStrength":"FLT_MAX"},
+        //axle main shape
+        ["fax1", "fax2"],
+        ["fax3", "fax4"],
+        ["fax1", "fax4"],
+        ["fax4", "fax2"],
+        ["fax3", "fax2"],
+        ["fax3", "fax1"],
+        //L
+        ["fax3l", "fax4l"],
+        ["fax3l", "fax3"],
+        ["fax4l", "fax4"],
+        ["fax3l", "fax1"],
+        ["fax4l", "fax1"],
+        ["fax3l", "fax2"],
+        ["fax4l", "fax2"],
+        ["fax3l", "fax4"],
+        ["fax4l", "fax3"],
+        //R
+        ["fax3r", "fax4r"],
+        ["fax3r", "fax3"],
+        ["fax4r", "fax4"],
+        ["fax3r", "fax1"],
+        ["fax4r", "fax1"],
+        ["fax3r", "fax2"],
+        ["fax4r", "fax2"],
+        ["fax3r", "fax4"],
+        ["fax4r", "fax3"],
+
+        //wheel hubs
+        {"beamSpring":40001000,"beamDamp":1000},
+        //L
+        ["fax4l", "fax5l"],
+        ["fax4l", "fax6l"],
+        ["fax3l", "fax5l"],
+        ["fax3l", "fax6l"],
+        //R
+        ["fax4r", "fax5r"],
+        ["fax4r", "fax6r"],
+        ["fax3r", "fax5r"],
+        ["fax3r", "fax6r"],
+
+        //steering arm
+        ["fax7l", "fax3l"],
+        ["fax7l", "fax4l"],
+        ["fax7l", "fax5l"],
+        ["fax7l", "fax6l"],
+
+        //stabilise upper link mount
+        {"beamSpring":25001000,"beamDamp":500},
+        ["fax8l", "fax3l"],
+        ["fax8r", "fax3r"],
+        ["fax2", "fax8l"],
+        ["fax1", "fax8l"],
+        ["fax2", "fax8r"],
+        ["fax1", "fax8r"],
+
+        //front wheel to axle
+        {"beamSpring":40001000,"beamDamp":500},
+        {"beamDeform":150000,"beamStrength":1500000},
+        //L
+        {"optional":true},
+        {"breakGroup":"wheel_FL"},
+        ["fw1l","fax3l", {"name":"axle_FL"}],
+        ["fw1l","fax4l"],
+        ["fw1l","fax5l"],
+        ["fw1l","fax6l"],
+        ["fw1l","fax7l"],
+        ["fw1ll","fax3l"],
+        ["fw1ll","fax4l"],
+        ["fw1ll","fax5l"],
+        ["fw1ll","fax6l"],
+        ["fw1ll","fax7l"],
+        //R
+        {"breakGroup":"wheel_FR"},
+        ["fw1r","fax3r", {"name":"axle_FR"}],
+        ["fw1r","fax4r"],
+        ["fw1r","fax5r"],
+        ["fw1r","fax6r"],
+        ["fw1rr","fax3r"],
+        ["fw1rr","fax4r"],
+        ["fw1rr","fax5r"],
+        ["fw1rr","fax6r"],
+        {"breakGroup":""},
+        {"optional":false},
+
+        //suspension links
+        {"beamSpring":50001000,"beamDamp":10000},
+        {"beamDeform":200000,"beamStrength":2525000},
+        ["fax4", "fm3l", {"dampCutoffHz":500}],
+        ["fax4", "fm3r", {"dampCutoffHz":500}],
+
+        ["fax8l", "fx1l", {"dampCutoffHz":500}],
+        ["fax8r", "fx1r", {"dampCutoffHz":500}],
+
+        //linkmounts
+        {"beamSpring":40001000,"beamDamp":1000},
+        {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+        ["fx1r", "fx1l"],
+        //L
+        ["fx1l", "fm3l"],
+        ["fx1l", "fm4l"],
+        ["fx1l", "fm5l"],
+        ["fx1l", "fm3r"],
+        ["fx1l", "fm4r"],
+        ["fx1l", "fm5r"],
+        //R
+        ["fx1r", "fm3r"],
+        ["fx1r", "fm4r"],
+        ["fx1r", "fm5r"],
+        ["fx1r", "fm3l"],
+        ["fx1r", "fm4l"],
+        ["fx1r", "fm5l"],
+
+        //airbag top flexbody helper
+        {"beamSpring":10001000,"beamDamp":500},
+        {"beamDeform":75000,"beamStrength":"FLT_MAX"},
+        //L
+        ["fab1l", "fs17l"],
+        ["fab1l", "fs18l"],
+        ["fab1l", "fm3l"],
+        ["fab1l", "fm5l"],
+        ["fab1l", "fm4l"],
+        ["fab1l", "fm5r"],
+        ["fab1l", "fm3r"],
+        //R
+        ["fab1r", "fs17r"],
+        ["fab1r", "fs18r"],
+        ["fab1r", "fm3r"],
+        ["fab1r", "fm5r"],
+        ["fab1r", "fm4r"],
+        ["fab1r", "fm5l"],
+        ["fab1r", "fm3l"],
+
+        //shock bottom flexbody helper
+        {"beamSpring":2501000,"beamDamp":250},
+        {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+        //L
+        ["faxshl", "fax4l"],
+        ["faxshl", "fax3l"],
+        ["faxshl", "fax8l"],
+        ["faxshl", "fax2"],
+        ["faxshl", "fax1"],
+        //R
+        ["faxshr", "fax4r"],
+        ["faxshr", "fax3r"],
+        ["faxshr", "fax8r"],
+        ["faxshr", "fax2"],
+        ["faxshr", "fax1"],
+
+        //axle articulation hard limit
+        {"beamType":"|SUPPORT", "beamLongBound":4},
+        {"beamSpring":10001000,"beamDamp":1000},
+        {"beamDeform":250000,"beamStrength":850000},
+        {"beamPrecompression":0.88},
+        ["fax4l", "fs17l"],
+        ["fax4l", "fs18l"],
+        ["fax4r", "fs17r"],
+        ["fax4r", "fs18r"],
+        {"beamPrecompression":1},
+
+        //steering hard limit
+        {"beamPrecompression":0.71},
+        ["fax5l", "fax2"],
+        ["fax5r", "fax2"],
+        {"beamPrecompression":0.87},
+        ["fax6l", "fax1"],
+        ["fax6r", "fax1"],
+        {"beamPrecompression":1},
+
+        //crash limiters
+        {"beamType":"|SUPPORT", "beamLongBound":2},
+        {"beamSpring":5001000,"beamDamp":500},
+        {"beamPrecompression":0.85},
+        ["fax4l", "fm5r"],
+        ["fax4l", "fm3r"],
+        ["fax4r", "fm5l"],
+        ["fax4r", "fm3l"],
+
+        //--AXLE TO FRAME DAMP--
+        {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":0,"beamDamp":15000,"beamDeform":200000,"beamStrength":350000},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        //["f13r","fax4r", {"beamDampRebound":5000}],
+        //["f13l","fax4l", {"beamDampRebound":5000}],
+
+        ////["fax3l", "fm6l", {"dampCutoffHz":500}],
+        ////["fax4l", "fm6l", {"dampCutoffHz":500}],
+        ////["fax3r", "fm6r", {"dampCutoffHz":500}],
+        ////["fax4r", "fm6r", {"dampCutoffHz":500}],
+        ////
+        ////["fax4l", "fm4r", {"dampCutoffHz":500}],
+        ////["fm4l", "fax4r", {"dampCutoffHz":500}],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "triangles": [
+        ["id1:","id2:","id3:"],
+        {"dragCoef":11.25},
+        {"groundModel":"metal"},
+        {"triangleType":"NONCOLLIDABLE"},
+        ["fax4r", "fax5r", "fax4"],
+        ["fax4", "fax5l", "fax4l"],
+        ["fax4l", "fax5l", "fax3l"],
+        ["fax3l", "fax6l", "fax4l"],
+        ["fax4r", "fax6r", "fax3r"],
+        ["fax3r", "fax5r", "fax4r"],
+        ["fax3r", "fax4r", "faxshr"],
+        ["fax3l", "fax4l", "faxshl"],
+        {"triangleType":"NORMALTYPE"},
+    ],
+},
+"citybus_wheeldata_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Spindles",
+        "value":0,
+    },
+    "slotType" : "citybus_wheeldata_F",
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //front wheels definition
+        {"selfCollision":true},
+        {"collision":true},
+        {"triangleCollision":false},
+        {"axleBeams":["axle_FL"]},
+        ["FL", "wheel_FL", "tire_FL", "fw1ll", "fw1l", 9999, "fax6l", -1, {"torqueCoupling:":"fax1", "torqueArm:":"fax2", "steerAxisUp:":"fax3l","steerAxisDown:":"fax4l"}],
+        {"axleBeams":["axle_FR"]},
+        ["FR", "wheel_FR", "tire_FR", "fw1rr", "fw1r", 9999, "fax6r", 1, {"torqueCoupling:":"fax1", "torqueArm:":"fax2", "steerAxisUp:":"fax3r","steerAxisDown:":"fax4r"}],
+        {"brakeTorque":0},
+        {"parkingTorque":0},
+        {"triangleCollision":false},
+        {"selfCollision":true},
+        {"axleBeams":[]},{"disableMeshBreaking":false,"disableTriangleBreaking":false},
+        {"enableHubcaps":false},
+        {"enableTireLbeams":false},
+        {"enableTreadReinfBeams":false},
+        {"enableTireReinfBeams":false},
+        {"enableTreadReinfBeams":false},
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        //front left axle
+        ["shaft", "wheelaxle_FL", "differential_F", 1, {"connectedWheel":"FL", "breakTriggerBeam":"axle_FL", "uiName":"Front Left Axle", "friction":10.6, "dynamicFriction": 0.012}],
+        //front right axle
+        ["shaft", "wheelaxle_FR", "differential_F", 2, {"connectedWheel":"FR", "breakTriggerBeam":"axle_FR", "uiName":"Front Right Axle", "friction":10.6, "dynamicFriction": 0.012}],
+    ],
+},
+"citybus_airbag_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Airbags",
+        "value":200,
+    },
+    "slotType" : "citybus_airbag_F",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         {"deformGroup":"airbag_F_break", "deformMaterialBase":"citybus", "deformMaterialDamaged":"invis"},
+         ["citybus_airbag_F", ["citybus_airbag_F"]],
+         {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+    "airbagBeamData": [
+            ["beamName", "groupName"],
+            ["airbag_FL", "leftAxle"],
+            ["airbag_FR", "rightAxle"],
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //--PRESSURED BEAM AIRBAGS--
+        {"beamPrecompression":1, "beamType":"|PRESSURED"},
+        {"beamSpring":100,"beamDamp":0,"beamDeform":100000,"beamStrength":250000},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        {"breakGroup":"airbag_F_break"},
+        {"breakGroupType":1},
+        ["fax8l","fab1l", {"pressurePSI":60,"surface":0.05,"volumeCoef":1, "pressureLimitPSI":300,"name":"airbag_FL","soundFile":"event:>Vehicle>Suspension>bus_01>spring_compress_01","colorFactor":0.5,"attackFactor":10,"volumeFactor":1.6,"decayFactor":2.0,"noiseFactor":0.01,"pitchFactor":0.5,"maxStress":10}],
+        ["fax8r","fab1r", {"pressurePSI":60,"surface":0.05,"volumeCoef":1, "pressureLimitPSI":300,"name":"airbag_FR","soundFile":"event:>Vehicle>Suspension>bus_01>spring_compress_01","colorFactor":0.5,"attackFactor":10,"volumeFactor":1.6,"decayFactor":2.0,"noiseFactor":0.01,"pitchFactor":0.5,"maxStress":10}],
+        {"breakGroupType":0},
+        //--LIMITERS--
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.1, "beamShortBound":0.1},
+        {"beamSpring":100,"beamDamp":0,"beamDeform":100000,"beamStrength":250000},
+        {"beamLimitSpring":50001000,"beamLimitDamp":10000},
+        {"deformGroup":"airbag_F_break","deformationTriggerRatio":0.1},
+        ["fax4l","fs17l"],
+        ["fax4l","fs18l"],
+        ["fax4r","fs17r"],
+        ["fax4r","fs18r"],
+        {"deformGroup":"", "deformationTriggerRatio":""},
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"citybus_shock_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Shocks",
+        "value":1000,
+    },
+    "slotType" : "citybus_shock_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        {"deformGroup":"airbag_F_break", "deformMaterialBase":"citybus", "deformMaterialDamaged":"invis"},
+        ["citybus_shock_F", ["citybus_shock_F"]],
+        {"deformGroup":"", "deformMaterialBase":"", "deformMaterialDamaged":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //--FRONT SHOCKS--
+        {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":0,"beamDeform":50000,"beamStrength":150000},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        {"breakGroup":"airbag_F_break"},
+        {"deformGroup":"airbag_F_break","deformationTriggerRatio":0.1},
+        {"breakGroupType":1},
+        ["fax8l","fs17l", {"beamDamp":18000,"beamDampRebound":36000,"beamDampFast":9000,"beamDampReboundFast":18000,"beamDampVelocitySplit":0.1,"dampCutoffHz":500}],
+        ["fax8l","fs18l", {"beamDamp":18000,"beamDampRebound":36000,"beamDampFast":9000,"beamDampReboundFast":18000,"beamDampVelocitySplit":0.1,"dampCutoffHz":500}],
+        ["fax8r","fs17r", {"beamDamp":18000,"beamDampRebound":36000,"beamDampFast":9000,"beamDampReboundFast":18000,"beamDampVelocitySplit":0.1,"dampCutoffHz":500}],
+        ["fax8r","fs18r", {"beamDamp":18000,"beamDampRebound":36000,"beamDampFast":9000,"beamDampReboundFast":18000,"beamDampVelocitySplit":0.1,"dampCutoffHz":500}],
+        {"breakGroupType":0},
+        {"deformGroup":"", "deformationTriggerRatio":""},
+        {"breakGroup":""},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+},
+"citybus_swaybar_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Sway Bar",
+        "value":600,
+    },
+    "slotType" : "citybus_swaybar_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["citybus_swaybar", ["citybus_swaybar"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        {"nodeMaterial":"|NM_METAL"},
+        {"frictionCoef":0.5},
+        {"selfCollision":false},
+        {"collision":false},
+        {"nodeWeight":10},
+        {"group":""},
+        ["arbf", 0.0, -4.3, 0.85],
+        {"group":""},
+    ],
+    "beams": [
+        ["id1:", "id2:"],
+        //--ANTI-ROLL--
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":501000,"beamDamp":100},
+        {"beamDeform":50000,"beamStrength":100000},
+        ["arbf", "fx1r"],
+        ["arbf", "fx1l"],
+        {"breakGroupType":1},
+        {"breakGroup":"airbag_F_break"},
+        ["arbf", "fax8r"],
+        ["arbf", "fax8l"],
+        {"breakGroup":""},
+        {"breakGroupType":0},
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"citybus_steering_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Steering",
+        "value":1200,
+    },
+    "slotType" : "citybus_steering_F",
+    "slots": [
+        ["type", "default", "description"],
+        ["citybus_power_steering","", "Power Steering"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["citybus_tierod", ["citybus_tierod_F"]],
+        ["citybus_steeringarm_b", ["citybus_steeringarm_b"]],//problem
+        ["citybus_steeringarm_a", ["citybus_steeringarm_a"]],//side
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$toe_F", "range", "", "Wheel Alignment", 1.001, 0.98, 1.02, "Toe Adjust", "Adjusts the wheel toe-in angle", {"subCategory":"Front"}],
+        ["$steer_center_F", "range", "", "Wheel Alignment", 0.000, -0.02, 0.02, "Toe Left/Right Trim", "Fine tunes the centerpoint of the steering", {"subCategory":"Front"}],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--STEERING--
+        {"selfCollision":true},
+        {"collision":true},
+        {"frictionCoef":0.5},
+        {"nodeMaterial":"|NM_METAL"},
+        //steering box
+        {"nodeWeight":20},
+        {"group":["citybus_steeringarm_a"]},
+        {"selfCollision":false},
+        ["fx3l", 0.96, -4.94, 0.64],
+        ["fx4l", 0.96, -4.94, 0.34],
+        ["fx5l", 0.81, -5.35, 0.565, {"group":""}],
+        {"nodeWeight":30},
+        {"group":["citybus_steeringarm_b","citybus_steeringarm_a"]},
+        ["fax9l", 0.71, -4.92, 0.565, {"selfCollision":false}],
+        ["fax19l",0.71, -4.92, 0.410, {"selfCollision":false,"nodeWeight":10}],
+        //steering arm
+        {"group":["citybus_steeringarm_b"]},
+        ["fax17l", 0.75, -4.10, 0.48,{"nodeWeight":10}],
+        {"group":["citybus_steeringarm_c","citybus_steeringarm_b"]},
+        ["fax7l", 0.75, -4.10, 0.53],
+        {"group":""},
+    ],
+    "torsionbars": [
+        ["id1:", "id2:", "id3:", "id4:"],
+        //rigidify frame in bending
+        {"spring":4000, "damp":10, "deform":45000, "strength":2500000},
+        ["fx3l", "fx4l", "fax9l", "fax19l"],
+        ["fax19l", "fax9l", "fax7l", "fax17l"],
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        //--STEERING--
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":90001000,"beamDamp":2000},
+        {"beamDeform":150000,"beamStrength":875000},
+        //steering link
+        ["fax9l", "fax7l", {"beamPrecompression":"$=1+$steer_center_F-0.0027","beamPrecompressionTime":0.5}],
+        ["fax9l", "fax17l", {"beamSpring":800100,"beamDamp":500,"beamPrecompression":"$=1+$steer_center_F-0.0027","beamPrecompressionTime":0.5}],
+        //tie rod
+        ["fax5l", "fax5r", {"beamPrecompression":"$toe_F","beamPrecompressionTime":0.5}],
+
+        //steering damper
+        {"beamPrecompression":1.0, "beamType":"|BOUNDED", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":0,"beamDeform":50000,"beamStrength":100000},
+        {"beamLimitSpring":0,"beamLimitDamp":0},
+        ["fax5r","fax2", {"beamDampVelocitySplit":0.025,"beamDampFast":2000,"beamDampReboundFast":2000,"beamDamp":500,"beamDampRebound":500}],
+        ["fax5l","fax2", {"beamDampVelocitySplit":0.025,"beamDampFast":2000,"beamDampReboundFast":2000,"beamDamp":500,"beamDampRebound":500}],
+        ["fax6r","fax1", {"beamDampVelocitySplit":0.025,"beamDampFast":2000,"beamDampReboundFast":2000,"beamDamp":500,"beamDampRebound":500}],
+        ["fax6l","fax1", {"beamDampVelocitySplit":0.025,"beamDampFast":2000,"beamDampReboundFast":2000,"beamDamp":500,"beamDampRebound":500}],
+        //steering box
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+        {"beamSpring":35001000,"beamDamp":1000},
+        {"beamDeform":150000,"beamStrength":"FLT_MAX"},
+        ["fx3l", "fax9l"],
+        ["fx4l", "fax9l"],
+        ["fx3l", "fax19l"],
+        ["fx4l", "fax19l"],
+        ["fax19l", "fax9l"],
+
+
+        ["fax17l", "fax7l"],
+
+        {"beamDeform":50000,"beamStrength":"FLT_MAX"},
+        ["fx5l", "fx3l"],
+        ["fx5l", "fx4l"],
+        ["fx3l", "fx4l"],
+        //to frame
+        ["fx4l", "fm3l"],
+        ["fx4l", "fm3ll"],
+        ["fx4l", "fm2ll"],
+        ["fx4l", "fm2l"],
+        ["fx4l", "fs17ll"],
+        ["fx4l", "fs17l"],
+
+        ["fx3l", "fm3l"],
+        ["fx3l", "fm3ll"],
+        ["fx3l", "fm2ll"],
+        ["fx3l", "fm2l"],
+        ["fx3l", "fs17ll"],
+        ["fx3l", "fs17l"],
+
+        ["fx5l", "fm2ll"],
+        ["fx5l", "fm2l"],
+        ["fx5l", "fm3l"],
+        ["fx5l", "fm3ll"],
+        ["fx5l", "fs17l"],
+        ["fx5l", "fs17ll"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+    ],
+    "torsionHydros": [
+        ["id1:","id2:","id3:","id4:"],
+        {"spring":1500000, "damp":2, "deform":"FLT_MAX", "strength":1500000},
+        ["fax9l","fx3l","fx4l","fx5l", {"precompressionAngle":0,"precompressionTime":1.01,"factor":-0.68,"steeringWheelLock":900,"inRate":5,"outRate":5,"inputSource":"steering_input"}],
+    ],
+    "input": {
+        "FFBcoef":"$=$ffbstrength*3.75",
+    },
+},
+"citybus_power_steering": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Power Steering",
+        "value":700,
+    },
+    "slotType" : "citybus_power_steering",
+    "controller": [
+        ["fileName"],
+        ["powerSteering", {"constantOffset":-0.55}],
+    ],
+},
+}

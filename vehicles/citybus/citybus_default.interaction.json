@@ -1,0 +1,14 @@
+{
+    "fileversion": 2,
+    "actions": {
+        //Suspension
+        "max_rideHeight":    {"order":1.1,"onDown":"controller.getControllerSafe('bus').maxRideHeight()",   "title":"ui.inputActions.citybus.max_rideHeight.title",    "desc":"ui.inputActions.citybus.max_rideHeight.description"},
+        "default_rideHeight":{"order":1.2,"onDown":"controller.getControllerSafe('bus').normalRideHeight()","title":"ui.inputActions.citybus.default_rideHeight.title","desc":"ui.inputActions.citybus.default_rideHeight.description"},
+        "toggle_kneel":      {"order":1.3,"onDown":"controller.getControllerSafe('bus').toggleKneel()",     "title":"ui.inputActions.citybus.toggle_kneel.title",      "desc":"ui.inputActions.citybus.toggle_kneel.description"},
+        //Openables
+        "toggle_doors":      {"order":2.1,"onDown":"controller.getControllerSafe('bus').toggleDoors()",     "title":"ui.inputActions.citybus.toggle_doors.title",      "desc":"ui.inputActions.citybus.toggle_doors.description"},
+        //Transmission
+        "setGearR":          {"order":3.1,"onDown":"controller.mainController.shiftToGearIndex(-1)",        "title": "ui.inputActions.vehicle.gearR.title",            "desc": "ui.inputActions.vehicle.gearR.description" },
+        "setGearD":          {"order":3.2,"onDown":"controller.mainController.shiftToGearIndex( 2)",        "title": "ui.inputActions.vehicle.gear1.title",            "desc": "ui.inputActions.vehicle.gear1.description" },
+    }
+}

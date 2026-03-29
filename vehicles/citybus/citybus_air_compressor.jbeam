@@ -1,0 +1,63 @@
+{
+    "citybus_air_compressor": {
+        "information": {
+            "authors": "BeamNG",
+            "name": "Air Compressor",
+            "value": 4100,
+        },
+        "slotType" : "citybus_air_compressor",
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+            ["compressor", "airCompressor1", "mainEngine", 2],
+        ],
+        "airCompressor1": {
+            "energyStorage": "mainAirTank",
+            "pumpDisplacement": 0.00045,
+        },
+        "mainEngine": {
+            "numberOfOutputPorts": 2,
+        },
+    },
+    "citybus_air_tank": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Air Tank",
+            "value":600,
+        },
+        "slotType" : "citybus_air_tank",
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$startAir", "range", "psi", "Chassis", 116, 0, 120, "Main Air Tank Pressure", "Initial air tank pressure", {"stepDis":1}],
+        ],
+        "energyStorage": [
+            ["type", "name"],
+            ["pressureTank", "mainAirTank"],
+        ],
+        "mainAirTank": {
+            "isPrimarySupply": true,
+            "capacity": 0.07,
+            "startingPressure": "$=$startAir*6895",
+        },
+    },
+    "citybus_auxilliary_air_tank": {
+        "information":{
+            "authors":"BeamNG",
+            "name":"Auxilliary Air Tank",
+            "value":600,
+        },
+        "slotType" : "citybus_auxilliary_air_tank",
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$startAirAux", "range", "psi", "Chassis", 116, 0, 120, "Auxilliary Air Tank Pressure", "Initial air tank pressure", {"stepDis":1}],
+        ],
+        "energyStorage": [
+            ["type", "name"],
+            ["pressureTank", "auxAirTank"],
+        ],
+        "auxAirTank": {
+            // Capacity is half the size of "mainAirTank" because mainAirTank accounts for both a wet and a dry tank
+            "capacity": 0.035,
+            "startingPressure": "$=$startAirAux*6895",
+        },
+    },
+}

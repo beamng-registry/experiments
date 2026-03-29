@@ -1,0 +1,104 @@
+{
+"citybus_brake_F": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Front Drum Brakes",
+        "value":1300,
+    },
+    "slotType" : "citybus_brake_F",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_F","brakepad_F_premium", "Front Brake Shoes", {"coreSlot":true}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["pneumatics/airbrakes", { "name": "airbrakes_F" }],
+    ],
+    "airbrakes_F": {
+        "soundEvent":"event:>Vehicle>Pneumatics>Air_Brakes",
+        "soundNode:":["fax4"],
+        "brakedWheels":["FL", "FR"],
+        "brakeTorque": [
+            ["pressure", "torqueCoef"],
+            [21000, 0],
+            [413685, 1],
+        ],
+        "springBrakeTorque": [
+            ["pressure", "torqueCoef"],
+            [200000, 0],
+            [240000, 0],
+        ]
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //brake drums
+         ["citybus_brakedrum_F", ["wheel_FL","wheel_FR","wheelhub_FR","wheelhub_FL"]],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brake properties
+        {"brakeTorque":"$=$brakestrength*12000"},
+        {"parkingTorque":0},
+        {"brakeSpring":200},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.35},
+        {"brakeMass":45.0},
+        {"brakeType":"drum"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+"citybus_brake_R": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Rear Drum Brakes",
+        "value":2100,
+    },
+    "slotType" : "citybus_brake_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_R","brakepad_R_premium", "Rear Brake Shoes", {"coreSlot":true}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["pneumatics/airbrakes", { "name": "airbrakes_R" }],
+    ],
+    "airbrakes_R": {
+        "soundEvent":"event:>Vehicle>Pneumatics>Air_Brakes",
+        "soundNode:": ["ax3"],
+        "brakedWheels": ["RL1", "RR1"],
+        "brakeTorque": [
+            ["pressure", "torqueCoef"],
+            [21000, 0],
+            [413685, 1],
+        ],
+        "springBrakeTorque": [
+            ["pressure", "torqueCoef"],
+            [0,      1],
+            [413685, 0],
+        ]
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         //brake drums
+         ["citybus_brakedrum_R", ["wheel_RL","wheel_RR","wheelhub_RR","wheelhub_RL"]],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brake properties
+        {"brakeTorque":"$=$brakestrength*16000"},
+        {"parkingTorque":0},
+        {"brakeSpring":200},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.35},
+        {"brakeMass":55},
+        {"brakeType":"drum"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":1.0},
+    ],
+},
+}

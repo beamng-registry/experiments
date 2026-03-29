@@ -1,0 +1,45 @@
+{
+  "BoundingBox":[
+    [
+      -1,
+      -1.54,
+      -0.319
+    ],
+    [
+      2.11,
+      11.09,
+      2.675
+    ]
+  ],
+  "Config Type":"Service",
+  "Configuration":"City (A)",
+  "Description":"Equipped with a 4 speed automatic and short final drive, better suited to use in the city",
+  "Drag Times":{
+    "brakingG":0.7053023882,
+    "time_0_60":0,
+    "time_1000":21.21950133,
+    "time_1_4":25.38100164,
+    "time_1_8":16.23850098,
+    "time_330":10.41050057,
+    "time_60":3.612500174,
+    "velAt_1_4":24.45160953,
+    "velAt_1_8":19.26188909
+  },
+  "Drivetrain":"RWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "Off-Road Score":22,
+  "Population":3600,
+  "Power":350,
+  "PowerPeakRPM":1900,
+  "Propulsion":"ICE",
+  "Top Speed":25.51749516,
+  "Torque":1475,
+  "TorquePeakRPM":1200,
+  "Transmission":"Automatic",
+  "Value":450000,
+  "Weight":12230,
+  "Weight/Power":34.94285714,
+  "defaultPaintName1":"White",
+  "defaultPaintName2":"Aquamarine"
+}

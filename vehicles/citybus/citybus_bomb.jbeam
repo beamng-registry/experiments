@@ -1,0 +1,40 @@
+{
+"citybus_bomb": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Bomb",
+        "value":2000,
+    },
+
+    "slotType" : "citybus_body_mod",
+
+    "controller": [
+        ["fileName"],
+        ["bomb",],
+    ],
+
+    "glowMap":{
+        "bomb_lights":        {"simpleFunction":"bomblights",   "off":"bomb_lights_flash", "on":"bomb_lights_steady"},
+    },
+
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["citybus_bomb", ["citybus_frame_upper"]],
+        ["citybus_bombcover", ["citybus_hvacdoor"]],
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["busbomb_d1", "citybus_bomb_d1",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u1", "citybus_bomb_u1",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u2", "citybus_bomb_u2",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u3", "citybus_bomb_u3",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u4", "citybus_bomb_u4",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u5", "citybus_bomb_u5",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u6", "citybus_bomb_u6",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u7", "citybus_bomb_u7",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u8", "citybus_bomb_u8",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u9", "citybus_bomb_u9",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+        ["busbomb_u0", "citybus_bomb_u0",     "sp18r","sm18r","sp16r",      {"x":0, "y":90, "z":90}, {"x":0, "y":0, "z":0},   {"x":0, "y":-0.013, "z":0}, 0, 1, -1, 1],
+    ],
+},
+}

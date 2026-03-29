@@ -1,0 +1,46 @@
+{
+  "BoundingBox":[
+    [
+      -1,
+      -1.54,
+      -0.319
+    ],
+    [
+      2.11,
+      11.09,
+      2.675
+    ]
+  ],
+  "Config Type":"Custom",
+  "Configuration":"Safari (A)",
+  "Description":"Base model equipped with Beam Safari paint, locking differential and short final drive, better suited to use on dirt roads",
+  "Drag Times":{
+    "brakingG":0.7046432029,
+    "time_0_60":0,
+    "time_1000":23.13450155,
+    "time_1_4":27.69700186,
+    "time_1_8":17.66450115,
+    "time_330":11.30650068,
+    "time_60":3.91050027,
+    "velAt_1_4":22.37579822,
+    "velAt_1_8":17.57473535
+  },
+  "Drivetrain":"RWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "Off-Road Score":22,
+  "Population":10,
+  "Power":279,
+  "PowerPeakRPM":1900,
+  "Propulsion":"ICE",
+  "Top Speed":25.45614769,
+  "Torque":1225,
+  "TorquePeakRPM":1200,
+  "Transmission":"Automatic",
+  "Value":410000,
+  "Weight":12250,
+  "Weight/Power":43.90681004,
+  "defaultPaintName1":"Shale Green",
+  "defaultPaintName2":"White",
+  "defaultPaintName3":"Black"
+}

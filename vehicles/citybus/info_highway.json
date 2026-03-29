@@ -1,0 +1,51 @@
+{
+  "0-100 km/h":41.8,
+  "0-60 mph":37.4,
+  "100-0 km/h":52,
+  "60-0 mph":154.3,
+  "BoundingBox":[
+    [
+      -1,
+      -1.54,
+      -0.319
+    ],
+    [
+      2.11,
+      11.09,
+      2.675
+    ]
+  ],
+  "Braking G":0.756,
+  "Config Type":"Service",
+  "Configuration":"Highway (A)",
+  "Description":"Equipped with a 6 speed automatic and tall final drive, better suited to use on the highway",
+  "Drag Times":{
+    "brakingG":0.7086604261,
+    "time_0_60":0,
+    "time_1000":21.24050134,
+    "time_1_4":25.58650167,
+    "time_1_8":16.09850098,
+    "time_330":10.29700057,
+    "time_60":3.574500244,
+    "velAt_1_4":23.43625104,
+    "velAt_1_8":18.89897115
+  },
+  "Drivetrain":"RWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "Off-Road Score":22,
+  "Population":2500,
+  "Power":350,
+  "PowerPeakRPM":1900,
+  "Propulsion":"ICE",
+  "Top Speed":32.56783176,
+  "Torque":1475,
+  "TorquePeakRPM":1200,
+  "Transmission":"Automatic",
+  "Value":460000,
+  "Weight":12230,
+  "Weight/Power":34.94285714,
+  "defaultPaintName1":"Silver",
+  "defaultPaintName2":"Orange",
+  "defaultPaintName3":"White"
+}

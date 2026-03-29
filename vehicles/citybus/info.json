@@ -1,0 +1,40 @@
+{
+  "Author": "BeamNG",
+  "Body Style": "Bus",
+  "Brand": "Wentward",
+  "Country": "United States",
+  "Derby Class": "Heavy Truck",
+  "Description": "City bus also used on highways and safari trips. Name stands for Diesel, Turbocharged, 40ft frame, Low floor. Famous for breaking the biggest ramp jump world record, using the rocket-boosted Hero configuration.",
+  "Name": "DT40L",
+  "Slogan": "Get busy",
+  "Type": "Truck",
+  "InsuranceClass": "commercial",
+  "Region": "northAmerica",
+  "Commercial Class": "Transit Bus",
+  "Years": {
+    "max": 1996,
+    "min": 1987
+  },
+  "defaultPaintName1": "White",
+  "defaultPaintName2": "Aquamarine",
+  "default_pc": "city",
+  "paints": {},
+  "multiPaintSetups": [],
+  "libraryPaints": [
+    "aquamarine",
+    "fire_red",
+    "orange",
+    "chestnut",
+    "brilliant_blue",
+    "black",
+    "white",
+    "shale_green",
+    "solar_yellow",
+    "forest_green",
+    "verdant_green",
+    "navy_blue",
+    "opal_green",
+    "silver",
+    "royal_blue"
+  ]
+}

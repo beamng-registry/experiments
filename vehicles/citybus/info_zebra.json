@@ -1,0 +1,44 @@
+{
+  "BoundingBox":[
+    [
+      -1,
+      -1.54,
+      -0.319
+    ],
+    [
+      2.11,
+      11.09,
+      2.675
+    ]
+  ],
+  "Config Type":"Custom",
+  "Configuration":"Zebra (A)",
+  "Description":"Base model equipped with Zebra Tours paint, locking differential and short final drive, better suited to use on dirt roads",
+  "Drag Times":{
+    "brakingG":0.7003205599,
+    "time_0_60":0,
+    "time_1000":23.11300163,
+    "time_1_4":27.67600195,
+    "time_1_8":17.65000123,
+    "time_330":11.30200076,
+    "time_60":3.915000279,
+    "velAt_1_4":22.39660251,
+    "velAt_1_8":17.59729689
+  },
+  "Drivetrain":"RWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "Off-Road Score":22,
+  "Population":10,
+  "Power":279,
+  "PowerPeakRPM":1900,
+  "Propulsion":"ICE",
+  "Top Speed":25.48658448,
+  "Torque":1225,
+  "TorquePeakRPM":1200,
+  "Transmission":"Automatic",
+  "Value":420000,
+  "Weight":12230,
+  "Weight/Power":43.83512545,
+  "defaultPaintName1":"White"
+}

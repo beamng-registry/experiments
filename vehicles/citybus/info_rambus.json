@@ -1,0 +1,57 @@
+{
+  "0-100 km/h":3.3,
+  "0-100 mph":5.7,
+  "0-200 km/h":7.4,
+  "0-200 mph":13.8,
+  "0-300 km/h":12.5,
+  "0-60 mph":3.2,
+  "100-0 km/h":48.8,
+  "100-200 km/h":4.1,
+  "60-0 mph":148.6,
+  "60-100 mph":2.4,
+  "BoundingBox":[
+    [
+      -1.294,
+      -4.27,
+      -0.319
+    ],
+    [
+      2.274,
+      11.42,
+      2.675
+    ]
+  ],
+  "Braking G":0.806,
+  "Config Type":"Custom",
+  "Configuration":"Ram Bus (A)",
+  "Description":"Rocket engines and a ram plow make this a weapon of mass vehicular destruction",
+  "Drag Times":{
+    "brakingG":0.8079824778,
+    "time_0_60":3.305000205,
+    "time_1000":8.879000533,
+    "time_1_4":10.31900064,
+    "time_1_8":7.103000404,
+    "time_330":4.919000273,
+    "time_60":1.95900013,
+    "velAt_1_4":71.53968608,
+    "velAt_1_8":52.97491475
+  },
+  "Drivetrain":"RWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "InsuranceClass": "prestige",
+  "Off-Road Score":22,
+  "Population":1,
+  "Power":350,
+  "PowerPeakRPM":1900,
+  "Propulsion":"ICE",
+  "Top Speed":97.41378018,
+  "Torque":1475,
+  "TorquePeakRPM":1200,
+  "Transmission":"Automatic",
+  "Value":835000,
+  "Weight":12575,
+  "Weight/Power":35.92857143,
+  "defaultPaintName1":"Black",
+  "defaultPaintName2":"Orange"
+}

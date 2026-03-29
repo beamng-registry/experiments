@@ -1,0 +1,113 @@
+{
+"citybus_steer": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Steering Wheel",
+        "value":200,
+    },
+    "slotType" : "citybus_steer",
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering"  , "citybus_steer"      , "sw1","sw3","sw2",  {"x":60, "y":0, "z":180}, {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1],
+     ],
+},
+"citybus_steer_01a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.301 Racing Wheel",
+        "value":310,
+    },
+
+    "slotType" : "citybus_steer",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering"  , "steer_01a"      , "sw1","sw3","sw2",  {"x":60, "y":0, "z":180}, {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0, "y":-0.0133,"z":-0.027}}],
+    ],
+},
+"citybus_steer_02a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.307 Racing Wheel",
+        "value":330,
+    },
+
+    "slotType" : "citybus_steer",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering"  , "steer_02a"      , "sw1","sw3","sw2",  {"x":60, "y":0, "z":180}, {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0, "y":-0.0133,"z":-0.027}}],
+    ],
+},
+"citybus_steer_02b": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.307R Racing Wheel",
+        "value":330,
+    },
+
+    "slotType" : "citybus_steer",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering"  , "steer_02b"      , "sw1","sw3","sw2",  {"x":60, "y":0, "z":180}, {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0, "y":-0.0133,"z":-0.027}}],
+    ],
+},
+"citybus_steer_02c": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Nomi Mod.207R Drift Wheel",
+        "value":250,
+    },
+
+    "slotType" : "citybus_steer",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering"  , "steer_02c"      , "sw1","sw3","sw2",  {"x":60, "y":0, "z":180}, {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0, "y":-0.0133,"z":-0.027}}],
+    ],
+},
+"citybus_steer_03a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Arnida Sportivo Racing Wheel",
+        "value":370,
+    },
+
+    "slotType" : "citybus_steer",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering"  , "steer_03a"      , "sw1","sw3","sw2",  {"x":60, "y":0, "z":180}, {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0, "y":-0.0133,"z":-0.027}}],
+    ],
+},
+"citybus_steer_04a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Arnida Corsa Racing Wheel",
+        "value":400,
+    },
+
+    "slotType" : "citybus_steer",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering"  , "steer_04a"      , "sw1","sw3","sw2",  {"x":60, "y":0, "z":180}, {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0, "y":-0.0133,"z":-0.027}}],
+    ],
+},
+"citybus_steer_05a": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Legno Classico Steering Wheel",
+        "value":440,
+    },
+
+    "slotType" : "citybus_steer",
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        //steering wheel
+        ["steering"  , "steer_05a"      , "sw1","sw3","sw2",  {"x":60, "y":0, "z":180}, {"x":0, "y":0, "z":1}    , {"x":0, "y":0, "z":0}, -1000, 1000, 0, 1, {"baseTranslation":{"x":0, "y":-0.0133,"z":-0.027}}],
+    ],
+},
+}
