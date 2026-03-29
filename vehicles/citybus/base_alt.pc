@@ -8,7 +8,7 @@
   "citybus_transmission":"citybus_transmission_6M",
   "citybus_driveshaft":"citybus_driveshaft",
   "brakepad_R":"brakepad_R_premium",
-  "citybus_turbo":"citybus_turbo_280",
+  "citybus_turbo":"citybus_turbo_400",
   "citybus_bumper_F":"citybus_bumper_F",
   "brakepad_F":"brakepad_F_premium",
   "citybus_glass":"citybus_glass",

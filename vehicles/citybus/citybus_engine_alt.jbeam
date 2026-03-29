@@ -11,7 +11,7 @@
         //engine
         ["citybus_transmission","citybus_transmission_4A", "Transmission"],
         ["citybus_radiator","citybus_radiator", "Radiator"],
-        ["citybus_turbo","citybus_turbo_280", "Intake", {"coreSlot":true}],
+        ["citybus_turbo","citybus_turbo_400", "Intake", {"coreSlot":true}],
         ["citybus_engine_ecu","citybus_engine_ecu", "Engine Management", {"coreSlot":true}],
         ["citybus_oilpan","citybus_oilpan", "Oil Pan", {"coreSlot":true}],
         //exhaust and intake are linked from body section because they mount to body
@@ -338,199 +338,10 @@
         {"group":""},
     ],
 },
-"citybus_oilpan": {
+"citybus_turbo_400": {
     "information":{
         "authors":"BeamNG",
-        "name":"Stock Oil Pan",
-        "value":90,
-    },
-    "slotType" : "citybus_oilpan",
-    "mainEngine": {
-        //cooling and oil system
-        "oilVolume":37,
-
-        //engine durability
-        "oilpanMaximumSafeG": 1.1
-
-        //node beam interface
-        "oilpanNodes:":["oilpan","oilref"],
-
-        //engine deform groups
-        "deformGroups_oilPan":["oilpan_damage"]
-    },
-    "nodes": [
-         ["id", "posX", "posY", "posZ"],
-         {"selfCollision":false},
-         {"collision":true},
-         {"frictionCoef":0.5},
-         {"nodeMaterial":"|NM_METAL"},
-
-         //oil pan node
-         {"group":""},
-         {"nodeWeight":2},
-         ["oilpan", 0.0, 5.50, 0.37],
-         ["oilref", 0.0, 5.50, 0.84, {"nodeWeight":1, "collision":false}],
-    ],
-    "beams": [
-          ["id1:", "id2:"],
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-
-          //oilpan node
-          {"beamSpring":1501000,"beamDamp":250},
-          {"beamDeform":8000,"beamStrength":"FLT_MAX"},
-          {"deformGroup":"oilpan_damage","deformationTriggerRatio":0.005},
-          ["oilpan", "en1r"],
-          ["oilpan", "en1l"],
-          ["oilpan", "en2r"],
-          ["oilpan", "en2l"],
-          ["oilpan", "en3r"],
-          ["oilpan", "en3l"],
-          ["oilpan", "en4r"],
-          ["oilpan", "en4l"],
-          {"deformGroup":"", "deformationTriggerRatio":""},
-
-          //oil ref
-          {"beamSpring":1001000,"beamDamp":150},
-          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
-          ["oilref", "en1r"],
-          ["oilref", "en1l"],
-          ["oilref", "en2r"],
-          ["oilref", "en2l"],
-          ["oilref", "en3r"],
-          ["oilref", "en3l"],
-          ["oilref", "en4r"],
-          ["oilref", "en4l"],
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
-    ],
-},
-"citybus_engine_ecu": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"Stock Engine Management",
-        "value":750,
-    },
-    "slotType" : "citybus_engine_ecu",
-    "mainEngine":{
-    },
-},
-"citybus_engine_internals": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"Stock Long Block",
-        "value":800,
-    },
-    "slotType" : "citybus_engine_internals",
-    "mainEngine":{
-    },
-},
-"citybus_airfilter": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"Air Filter",
-        "value":450,
-    },
-    "slotType" : "citybus_airfilter",
-    "flexbodies": [
-         ["mesh", "[group]:", "nonFlexMaterials"],
-         ["citybus_airfilter", ["citybus_frame_upper"]],
-    ],
-    "nodes": [
-         ["id", "posX", "posY", "posZ"],
-         {"selfCollision":true},
-         {"collision":true},
-         //--Air Filter-
-         {"frictionCoef":0.5},
-         {"nodeMaterial":"|NM_METAL"},
-         {"nodeWeight":2.0},
-         {"group":"citybus_airfilter"},
-         ["in0",-1.2, 5.85, 2.1, {"engineGroup":"intake"}],
-         {"group":""},
-    ],
-
-    "beams": [
-          ["id1:", "id2:"],
-          //--AIR FILTER--
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
-          {"deformLimitExpansion":1.1},
-          {"beamSpring":51000,"beamDamp":250},
-          {"beamDeform":10000,"beamStrength":"FLT_MAX"},
-          {"deformGroup":"mainEngine_intake", "deformationTriggerRatio":0.01},
-          ["in0", "sp17rr"],
-          ["in0", "st17rr"],
-          ["in0", "st18rr"],
-          ["in0", "sp18rr"],
-          {"deformGroup":"", "deformationTriggerRatio":""},
-          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
-    ],
-},
-"citybus_turbo_280": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"T280 Turbocharger",
-        "value":4400,
-    },
-    "slotType" : "citybus_turbo",
-    "flexbodies": [
-        ["mesh", "[group]:"],
-    ],
-    "turbocharger": {
-        "hissLoopEvent":"event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_hiss",
-        "whineLoopEvent":"event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_spin",
-        "bovEnabled":false,
-        "bovSoundVolumeCoef":0.0,
-        "hissVolumePerPSI": 0.0,
-        "whineVolumePer10kRPM": 0.05,
-        "whinePitchPer10kRPM": 0.074,
-        "wastegateStart":24,
-        "wastegateLimit":25,
-        "maxExhaustPower": 10000,
-        "backPressureCoef": 0.00006,
-        "frictionCoef": 12,
-        "inertia":15,
-        "damageThresholdTemperature": 750,
-        "pressurePSI":[
-            //turbineRPM, pressure(PSI)
-            [0,         0],
-            [30000,     8],
-            [60000,     14],
-            [90000,     28],
-            [150000,    38],
-            [200000,    44],
-            [250000,    51],
-            [300000,    55],
-        ],
-        "engineDef":[
-            //engineRPM, efficiency, exhaustFactor
-            [0,        0,     0],
-            [200,   0.37,   0.1],
-            [400,   0.51,  0.30],
-            [600,   0.64,  0.54],
-            [800,   0.75,  0.75],
-            [1000,  0.78,  0.87],
-            [1200,  0.79,   0.9],
-            [1400,  0.78,  0.87],
-            [1500,  0.775,  0.81],
-            [1600,  0.77,  0.75],
-            [1800,  0.76,  0.67],
-            [2000,  0.74,  0.59],
-            [2200,  0.66,   0.51],
-            [2400,  0.61,   0.43],
-            [2600,  0.50,   0.35],
-            [2800,  0.33,   0.26],
-            [3000,  0.22,   0.18],
-        ],
-    },
-    "mainEngine": {
-        //turbocharger name
-        "turbocharger":"turbocharger",
-        //turbocharger deform groups
-        "deformGroups_turbo":["mainEngine_turbo","mainEngine_intercooler","mainEngine_piping"]
-    },
-},
-"citybus_turbo_350": {
-    "information":{
-        "authors":"BeamNG",
-        "name":"T350 Turbocharger",
+        "name":"T400 Turbocharger",
         "value":6000,
     },
     "slotType" : "citybus_turbo",
@@ -541,47 +352,42 @@
         "hissLoopEvent":"event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_hiss",
         "whineLoopEvent":"event:>Vehicle>Forced_Induction>turbo_bus_01>turbo_spin",
         "bovEnabled":false,
-        "bovSoundVolumeCoef":0.0,
-        "hissVolumePerPSI": 0.0,
-        "whineVolumePer10kRPM": 0.06,
-        "whinePitchPer10kRPM": 0.074,
-        "wastegateStart":34,
-        "wastegateLimit":35,
-        "maxExhaustPower": 14000,
-        "backPressureCoef": 0.00005,
-        "frictionCoef": 12,
-        "inertia":15,
+        "bovSoundVolumeCoef": 0.0,
+        "hissVolumePerPSI": 0.02,
+        "whineVolumePer10kRPM": 0.05,
+        "whinePitchPer10kRPM": 0.165,
+        "wastegateStart":9,
+        "wastegateLimit":11,
+        "maxExhaustPower": 750,
+        "backPressureCoef": 0.000005,
+        "frictionCoef": 2.5,
+        "inertia":1,
         "damageThresholdTemperature": 750,
         "pressurePSI":[
             //turbineRPM, pressure(PSI)
             [0,         0],
-            [30000,     9],
-            [60000,  16.5],
-            [90000,     30],
-            [150000,    41],
-            [200000,    48],
-            [250000,    56],
-            [300000,    61],
+            [15000,     0],
+            [30000,     5],
+            [60000,     13],
+            [90000,     36],
+            [120000,    45],
+            [150000,    65],
+            [200000,    85],
         ],
         "engineDef":[
             //engineRPM, efficiency, exhaustFactor
-            [0,        0,     0],
-            [200,   0.37,   0.1],
-            [400,   0.51,  0.30],
-            [600,   0.63,  0.54],
-            [800,   0.76,  0.75],
-            [1000,  0.77,  0.87],
-            [1200,  0.78,   0.9],
-            [1400,  0.785,  0.87],
-            [1500,  0.779,  0.81],
-            [1600,  0.776,  0.75],
-            [1800,  0.772,  0.67],
-            [2000,  0.768,  0.59],
-            [2200,  0.71,   0.51],
-            [2400,  0.64,   0.43],
-            [2600,  0.53,   0.35],
-            [2800,  0.33,   0.26],
-            [3000,  0.22,   0.18],
+            [0,     0.20,   0.10],
+            [250,   0.20,   0.10],
+            [500,   0.60,   0.40],
+            [800,   0.80,   0.90],
+            [1000,  0.90,   0.90],
+            [1200,  0.90,   0.90],
+            [1400,  0.90,   0.90],
+            [1600,  0.86,   0.85],
+            [2000,  0.85,   0.85],
+            [2500,  0.80,   0.85],
+            [3000,  0.80,   0.85],
+            [3500,  0.80,   0.85],
         ],
     },
     "mainEngine": {
