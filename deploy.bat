@@ -10,7 +10,7 @@ if %ERRORLEVEL% EQU 0 (
     echo Compression successful!
 
     :: Move to BeamNG folder
-    copy citybus.zip "C:\Program Files (x86)\Steam\steamapps\common\BeamNG.drive\content\vehicles\citybus.zip"
+    move citybus.zip "C:\Users\admin-local\AppData\Local\BeamNG\BeamNG.drive\current\mods"
 ) else (
     echo Compression failed with error code %ERRORLEVEL%.
 )

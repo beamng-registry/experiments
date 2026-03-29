@@ -5,7 +5,7 @@
   "citybus_intdisplays":"none",
   "citybus_stanchions":"citybus_stanchions",
   "citybus_accessdoor_FL":"citybus_accessdoor_FL",
-  "citybus_transmission":"citybus_transmission_4A",
+  "citybus_transmission":"citybus_transmission_6M",
   "citybus_driveshaft":"citybus_driveshaft",
   "brakepad_R":"brakepad_R_premium",
   "citybus_turbo":"citybus_turbo_280",
