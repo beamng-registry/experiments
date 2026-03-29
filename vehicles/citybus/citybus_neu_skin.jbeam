@@ -1,0 +1,119 @@
+{
+  "citybus_skin_metroneu": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Metro (Neuplan)",
+        "value":11000
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "metroneu"
+},
+  "citybus_skin_safarineu": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Safari (Neuplan)",
+          "value":15600
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "safarineu"
+  },
+  "citybus_skin_zebraneu": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Zebra (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "zebraneu"
+  },
+  "citybus_skin_transitneu": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Transit (Neuplan)",
+          "value":10200
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "transitneu"
+  },
+  "citybus_skin_mzkwej": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"MZK Wejherowo Livery (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "mzkwej"
+  },
+  "citybus_skin_zkmgda": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"ZKM Gdańsk Livery (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "zkmgda"
+  },
+  "citybus_skin_pkagdy": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"PKA Gdynia Livery (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "pkagdy"
+  },
+  "citybus_skin_ztmwar": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"ZTM Warszawa Livery (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "ztmwar"
+  },
+  "citybus_skin_neu_twotone": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Neuplan Two-Tone Paint",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "neu_twotone"
+  },
+  "citybus_skin_berlin": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Berlin Livery (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "berlin"
+  },
+  "citybus_skin_mzkwejk": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"MZK Wejherowo K-Series Livery (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "mzkwejk"
+  },
+  "citybus_skin_pkagdyk": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"PKA Gdynia K-Series Livery (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "pkagdyk"
+  },
+  "citybus_skin_ztmwark": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"ZTM Warszawa K-Series Livery (Neuplan)",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "ztmwark"
+  },
+}

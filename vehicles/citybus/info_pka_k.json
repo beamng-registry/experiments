@@ -1,0 +1,46 @@
+{
+  "0-100 km/h":38.8,
+  "0-60 mph":34.8,
+  "100-0 km/h":52,
+  "60-0 mph":154.3,
+    "Years":{
+    "max":1999,
+    "min":1998
+  },
+  "Country":"Poland",
+  "BoundingBox":[
+    [
+      -1,
+      -1.54,
+      -0.319
+    ],
+    [
+      2.11,
+      11.09,
+      2.675
+    ]
+  ],
+  "Braking G":0.756,
+  "Config Type":"Service",
+  "Brand":"Neuplan",
+  "Config Type":"Service",
+  "Configuration":"Neuplan K PKA Gdynia",
+  "Description":"Facelifted equipped with 4 speed automatic, bigger turbocharger. Equipped in PKA Gdynia Livery.",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Diesel",
+  "Induction Type":"Turbo",
+  "Name":"K Series",
+  "Off-Road Score":23,
+  "Population":2500,
+  "Power":350,
+  "PowerPeakRPM":1900,
+  "Propulsion":"ICE",
+  "Top Speed":34.35447183,
+  "Torque":1475,
+  "TorquePeakRPM":1200,
+  "Transmission":"Automatic",
+  "Value":35000,
+  "Weight":12225,
+  "Weight/Power":34.92857143,
+  "defaultPaintName1":"Pearl White"
+}
