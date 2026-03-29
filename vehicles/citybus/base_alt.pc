@@ -20,7 +20,7 @@
   "citybus_shock_F":"citybus_shock_F",
   "citybus_steer":"citybus_steer",
   "citybus_enginedoor":"citybus_enginedoor",
-  "citybus_ABS":"citybus_ABS",
+  "citybus_ABS":none,
   "citybus_sidedoor_R":"citybus_sidedoor_R",
   "citybus_steering_F":"citybus_steering_F",
   "citybus_tire_R":"citybus_tire_R",
