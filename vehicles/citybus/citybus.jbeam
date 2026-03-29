@@ -1,0 +1,235 @@
+{
+"citybus": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Wentward Bus"
+    },
+    "slotType" : "main",
+
+    "scaledragCoef":1,
+
+    "slots": [
+        ["type", "default", "description"],
+        ["citybus_frame","citybus_frame","Frame", {"coreSlot":true}],
+        ["paint_design","","Paint Design"],
+        ["licenseplate_design_2_1","","License Plate Design"],
+        ["citybus_mod", "", "Additional Modification"],
+        ["skin_signtype","citybus_skin_signtype_flipdot","Destination Signs Type", {"coreSlot":true}]
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$brakestrength", "range", "", "Brakes", 1, 0.6, 1.0, "Brake Force Multiplier", "Scales the overall brake torque for this setup", {"minDis":60, "maxDis":100}],
+        ["$ffbstrength", "range", "", "Chassis", 1, 0.5, 1.5, "Setup-Specific Force Feedback Multiplier", "Scales the force feedback strength for THIS SETUP ONLY", {"minDis":50, "maxDis":150}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["vehicleController"],
+        ["bus", {"nextStopNode":"nextstop", "destinationSignNode":"destsign"}],
+        ["reverseWarn", {"beepLoopName":"event:>Vehicle>Electrics>Reverse>Beep_04"}],
+        ["pneumatics/actuators", {"name":"airbags"}],
+        ["pneumatics/actuators", {"name":"doors"}],
+        ["pneumatics/autoLevelSuspension", {"name":"airSuspension"}],
+        ["pneumatics/crossFlowValve", {"name": "auxTankCrossFlow"}],
+    ],
+    "airSuspension": {
+        "actuationStartDistance": 0.005,
+        "actuationEndDistance": 0.03,
+        "actuationDelay": 3,
+        "actuatorGroups": "airSuspensionData",
+    },
+    "airSuspensionData": [
+        ["beamGroup", "controlBeamName", "controlGroupName"],
+        ["leftAxle", "airbag_FL", "leftAxle"],
+        ["rightAxle", "airbag_FR", "rightAxle"],
+    ],
+    "auxTankCrossFlow": {
+        "sourceTankName": "mainAirTank",
+        "targetTankName": "auxAirTank",
+        "flowPipeRadius": 0.0075,
+        "sourceTankMinPressurePSI": 60,
+        "pressureDiffForFullFlowPSI": 5,
+    },
+    "airbags": {
+        "airTankName": "auxAirTank",
+        "supplyHoseRadius": 0.015,
+        "pressureDumpFlowRate": 0.008,
+        "maxSupplyPressurePSI": 90,
+        "crossFlowBetweenBeams": true,
+        "pressuredBeams": "airbagBeamData",
+        "crossFlowGroups": "airbagCrossFlow",
+        "groupSounds": "airbagBeamSoundData",
+    },
+    "airbagBeamData": [
+        ["beamName", "groupName"],
+        {"crossFlowTag": "common"},
+    ],
+    "airbagCrossFlow": [
+        ["crossFlowTag", "virtualBufferCapacity"],
+        // {"debug": true},
+        ["common", 0.008],
+        ["rightSideKneeling", 0.008],
+    ],
+    "airbagBeamSoundData":[
+        ["groupName", "soundIncrease", "soundDecrease", "volumeIncrease", "volumeDecrease", "node:"],
+        {"flowRateVolumeFactor": 500},
+        {"startFlowRateThreshold": 0.003, "stopFlowRateThreshold": 0.0001},
+        ["leftAxle", "event:>Vehicle>Pneumatics>Suspension_Up", "event:>Vehicle>Pneumatics>Suspension_Down", 1, 1, "ab1l"],
+        ["rightAxle", "event:>Vehicle>Pneumatics>Suspension_Up", "event:>Vehicle>Pneumatics>Suspension_Down", 1, 1, "ab1r"],
+    ],
+    "doors": {
+        "airTankName": "auxAirTank",
+        "supplyHoseRadius": 0.0125,
+        "virtualBufferCapacity": 0.002,
+        "pressureDumpFlowRate": 0.005,
+        "maxSupplyPressurePSI": 50,
+        "pressuredBeams":"doorBeamData",
+        "crossFlowGroups": "doorCrossFlow",
+        "groupSounds": "doorBeamSoundData",
+    },
+    "doorBeamData": [
+        ["beamName", "groupName"],
+    ],
+    "doorCrossFlow": [
+        ["crossFlowTag", "virtualBufferCapacity"],
+        ["frontDoors", 0.005],
+        ["rearDoors", 0.005],
+    ],
+    "doorBeamSoundData":[
+        ["groupName", "soundIncrease", "soundDecrease", "volumeIncrease", "volumeDecrease", "node:"],
+        {"flowRateVolumeFactor": 150}, // scaling of volume RTPC - defines how rapidly volume decreases from max value to 0
+        {"startFlowRateThresholdPressureIncrease": 0.0015, "stopFlowRateThresholdPressureIncrease": 0.0015}, // start and stop threshold for door closing
+        {"startFlowRateThresholdPressureDecrease": 0.0015, "stopFlowRateThresholdPressureDecrease": 0.0015}, // start and stop threshold for door opening
+        ["frontDoors", "event:>Vehicle>Pneumatics>Door_Close", "event:>Vehicle>Pneumatics>Door_Open", 1, 1, "st3rr"], // max volume for opening (front)
+        ["rearDoors", "event:>Vehicle>Pneumatics>Door_Close", "event:>Vehicle>Pneumatics>Door_Open", 1, 1, "st11rr"], // max volume for opening (rear)
+    ],
+    "reverseWarn": {
+        "soundNode:": ["ac1r"],
+    },
+},
+"citybus_skin_signtype_flipdot": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Yellow Flip-Dot Display",
+        "value":150,
+    },
+    "slotType" : "skin_signtype",
+    "skinName" : "flipdot",
+  },
+  "citybus_skin_signtype_led_orange": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Orange LED Display",
+        "value":500,
+    },
+    "slotType" : "skin_signtype",
+    "skinName" : "led_orange",
+  },
+  "citybus_skin_transit": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Transit",
+          "value":10200
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "transit"
+  },
+  "citybus_skin_metro": {
+    "information":{
+        "authors":"BeamNG",
+        "name":"Metro",
+        "value":11000
+    },
+    "slotType" : "paint_design",
+    "globalSkin" : "metro"
+},
+  "citybus_skin_safari": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Safari",
+          "value":15600
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "safari"
+  },
+  "citybus_skin_zebra": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Zebra",
+          "value":16500
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "zebra"
+  },
+    "citybus_skin_hero": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Hero",
+          "value":32000
+      },
+      "slotType" : "paint_design",
+      "globalSkin" : "hero"
+    },
+  "citybus_seats_skin_colored1": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Colored Seats (Primary)",
+          "value":300
+      },
+      "slotType" : "skin_seats",
+      "skinName" : "seats_colored1"
+  },
+  "citybus_seats_skin_colored2": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Colored Seats (Secondary)",
+          "value":300
+      },
+      "slotType" : "skin_seats",
+      "skinName" : "seats_colored2"
+  },
+  "citybus_seats_skin_colored3": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Colored Seats (Tertiary)",
+          "value":300
+      },
+      "slotType" : "skin_seats",
+      "skinName" : "seats_colored3"
+  },
+  "citybus_seats_skin_metro": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Metro Seats Pattern (Colorable)",
+          "value":300
+      },
+      "slotType" : "skin_seats",
+      "skinName" : "seats_metro"
+  },
+  "citybus_seats_skin_zebra": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Zebra Seats Pattern",
+          "value":300
+      },
+      "slotType" : "skin_seats",
+      "skinName" : "seats_zebra"
+  },
+  "citybus_seats_skin_safari": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Safari Green Seats",
+          "value":300
+      },
+      "slotType" : "skin_seats",
+      "skinName" : "seats_safari"
+  },
+  "citybus_seats_skin_standard": {
+      "information":{
+          "authors":"BeamNG",
+          "name":"Standard Blue Seats",
+          "value":300
+      },
+      "slotType" : "skin_seats",
+      "skinName" : "seats_standard"
+  },
+}

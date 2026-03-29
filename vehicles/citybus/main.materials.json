@@ -1,0 +1,655 @@
+{
+  "bomb_lights_flash": {
+    "name": "bomb_lights_flash",
+    "mapTo": "bomb_lights_flash",
+    "class": "Material",
+    "Stages": [
+      {
+        "animFlags": 16,
+        "colorMap": "vehicles/citybus/bomb_lights.dds",
+        "emissive": true,
+        "glow": true,
+        "sequenceFramePerSec": 120,
+        "sequenceSegmentSize": 0.0399999991,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "AddAlpha"
+  },
+  "bomb_lights_steady": {
+    "name": "bomb_lights_steady",
+    "mapTo": "bomb_lights_steady",
+    "class": "Material",
+    "Stages": [
+      {
+        "animFlags": 16,
+        "colorMap": "vehicles/citybus/bomb_lights.dds",
+        "emissive": true,
+        "glow": true,
+        "sequenceFramePerSec": 120,
+        "sequenceSegmentSize": 0.00800000038,
+        "useAnisotropic": true,
+        "vertColor": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "AddAlpha"
+  },
+  "citbus_lcd_dmg": {
+    "name": "citbus_lcd_dmg",
+    "mapTo": "citbus_lcd_dmg",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/citybus/citybus_lcd_dmg_b.color.png",
+        "normalMap": "/vehicles/citybus/citybus_lcd_dmg_n.normal.png",
+        "normalMapStrength": 2,
+        "roughnessMap": "/vehicles/citybus/citybus_lcd_dmg_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus": {
+    "name": "citybus",
+    "mapTo": "citybus_old",
+    "class": "Material",
+    "Stages": [
+      {
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.445299804,
+        "useAnisotropic": true
+      },
+      {
+        "colorMap": "vehicles/citybus/citybus_d.dds",
+        "normalMap": "vehicles/citybus/citybus_n.dds",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.607767701,
+        "specularMap": "vehicles/citybus/citybus_s.dds",
+        "useAnisotropic": true
+      },
+      {
+        "colorMap": "vehicles/citybus/citybus_c.dds",
+        "instanceDiffuse": true,
+        "normalMap": "vehicles/citybus/citybus_n.dds",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.842635155,
+        "specularMap": "vehicles/citybus/citybus_s.dds",
+        "useAnisotropic": true
+      },
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None"
+  },
+  "citybus_decals_gauges_on": {
+    "name": "citybus_decals_gauges_on",
+    "mapTo": "citybus_decals_gauges_on",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/citybus/citybus_gauges_decals_g.color.png",
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveMap": "/vehicles/citybus/citybus_gauges_decals_g.color.png",
+        "opacityMap": "/vehicles/citybus/citybus_gauges_decals_o.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "alphaTest": true,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "materialTag2": "decal",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "version": 1.5
+  },
+  "citybus_engine": {
+    "name": "citybus_engine",
+    "mapTo": "citybus_engine",
+    "class": "Material",
+    "Stages": [
+      {
+        "normalMap": "vehicles/citybus/citybus_engine_n.dds",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.607767701,
+        "useAnisotropic": true
+      },
+      {
+        "colorMap": "vehicles/citybus/citybus_engine_d.dds",
+        "normalMap": "vehicles/citybus/citybus_engine_n.dds",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.607767701,
+        "specularMap": "vehicles/citybus/citybus_engine_s.dds",
+        "useAnisotropic": true
+      },
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None"
+  },
+  "citybus_gauges": {
+    "name": "citybus_gauges",
+    "mapTo": "citybus_gauges",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/citybus/citybus_gauges_b.color.png",
+        "normalMap": "/vehicles/citybus/citybus_gauges_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_gauges_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_gauges_glass": {
+    "name": "citybus_gauges_glass",
+    "mapTo": "citybus_gauges_glass",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/citybus/citybus_glass_b.color.png",
+        "metallicFactor": 1,
+        "opacityFactor": 0.216999993,
+        "roughnessFactor": 0.252000004
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "cubemap": "global_cubemap_metalblurred",
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "version": 1.5
+  },
+  "citybus_gauges_on": {
+    "name": "citybus_gauges_on",
+    "mapTo": "citybus_gauges_on",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/citybus/citybus_gauges_b.color.png",
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveMap": "/vehicles/citybus/citybus_gauges_g.color.png",
+        "normalMap": "/vehicles/citybus/citybus_gauges_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_gauges_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_generic_odo": {
+    "name": "citybus_generic_odo",
+    "mapTo": "citybus_generic_odo",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/common/odometer_analog_ao.data.png",
+        "ambientOcclusionMapUseUV": 1,
+        "baseColorMap": "@citybus_generic_odo",
+        "diffuseMapUseUV": 1,
+        "metallicMapUseUV": 1,
+        "normalMap": "/vehicles/common/odometer_analog_nm.normal.png",
+        "normalMapUseUV": 1,
+        "roughnessMap": "/vehicles/common/odometer_analog_r.data.png",
+        "roughnessMapUseUV": 1
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "citybus_glass": {
+    "name": "citybus_glass",
+    "mapTo": "citybus_glass",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "vehicles/citybus/citybus_glass_b.color.png",
+        "metallicFactor": 1,
+        "opacityMap": "/vehicles/citybus/citybus_glass_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.064000003
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "citybus_glass_dmg": {
+    "name": "citybus_glass_dmg",
+    "mapTo": "citybus_glass_dmg",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "vehicles/citybus/citybus_glass_dmg_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/citybus/citybus_glass_dmg_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_glass_dmg_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.064000003
+      },
+      {
+      },
+      {
+      },
+      {
+      }
+    ],
+    "alphaRef": 20,
+    "alphaTest": true,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "citybus_glass_int": {
+    "name": "citybus_glass_int",
+    "mapTo": "citybus_glass_int",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/citybus/citybus_glass_b.color.png",
+        "metallicFactor": 1,
+        "opacityFactor": 0.481000006,
+        "opacityMap": "/vehicles/citybus/citybus_glass_o.data.png",
+        "pixelSpecular": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "version": 1.5
+  },
+  "citybus_glass_int_dmg": {
+    "name": "citybus_glass_int_dmg",
+    "mapTo": "citybus_glass_int_dmg",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/citybus/citybus_glass_b.color.png",
+        "metallicFactor": 1,
+        "opacityFactor": 0.66900003,
+        "opacityMap": "/vehicles/citybus/citybus_glass_dmg_o.data.png",
+        "pixelSpecular": true
+      },
+      {
+        "metallicFactor": null,
+        "opacityFactor": null,
+        "pixelSpecular": null
+      },
+      {
+        "metallicFactor": null,
+        "opacityFactor": null,
+        "pixelSpecular": null
+      },
+      {
+        "metallicFactor": null,
+        "opacityFactor": null,
+        "pixelSpecular": null
+      }
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "version": 1.5
+  },
+  "citybus_intdetail": {
+    "name": "citybus_intdetail",
+    "mapTo": "citybus_intdetail",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "activeLayers": 1,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_intdisplay": {
+    "name": "citybus_intdisplay",
+    "mapTo": "citybus_intdisplay",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/citybus/citybus_intdisplay_b.color.png",
+        "metallicFactor": 0.453999996,
+        "normalMap": "/vehicles/citybus/citybus_intdisplay_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdisplay_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_interior": {
+    "name": "citybus_interior",
+    "mapTo": "citybus_interior",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_interior_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_interior_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_interior_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_interior_n.normal.png",
+        "pixelSpecular": null,
+        "roughnessFactor": null,
+        "roughnessMap": "/vehicles/citybus/citybus_interior_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_main": {
+    "name": "citybus_main",
+    "mapTo": "citybus",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/citybus/citybus_main_cc.data.png",
+        "colorPaletteMap": "/vehicles/citybus/citybus_main_p.color.png",
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_nextStop_DSP": {
+    "name": "citybus_nextStop_DSP",
+    "mapTo": "citybus_nextStop_DSP",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.0778499991,
+          0.0778499991,
+          0.0778499991,
+          1
+        ],
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveMap": "@busNextStopDsp",
+        "metallicFactor": 0.519999981,
+        "pixelSpecular": null,
+        "roughnessFactor": 0.109999999,
+        "specular": [
+          1,
+          1,
+          1,
+          0.949999988
+        ]
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_seats": {
+    "name": "citybus_seats",
+    "mapTo": "citybus_seats",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "activeLayers": 1,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_sign": {
+    "name": "citybus_sign",
+    "mapTo": "citybus_sign",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_sign_dmg": {
+    "name": "citybus_sign_dmg",
+    "mapTo": "citybus_sign_dmg",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_signglass": {
+    "name": "citybus_signglass",
+    "mapTo": "citybus_signglass",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "vehicles/citybus/citybus_glass_b.color.png",
+        "metallicFactor": 1,
+        "opacityMap": "/vehicles/citybus/citybus_glass_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.064000003
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "citybus_systems": {
+    "name": "citybus_systems",
+    "mapTo": "citybus_systems",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_systems_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_systems_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_systems_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_systems_n.normal.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/citybus/citybus_systems_r.data.png"
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null
+      },
+      {
+        "metallicFactor": null,
+        "pixelSpecular": null
+      }
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "citybus_transmission_DSP": {
+    "name": "citybus_transmission_DSP",
+    "mapTo": "citybus_transmission_DSP",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/citybus/citybus_transmission_DSP_b.color.png",
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveMap": "/vehicles/citybus/citybus_transmission_DSP_b.color.png",
+        "opacityMap": "/vehicles/citybus/citybus_transmission_DSP_o.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "alphaTest": true,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "materialTag2": "decal",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "version": 1.5
+  }
+}

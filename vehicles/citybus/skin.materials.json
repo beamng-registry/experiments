@@ -1,0 +1,703 @@
+{
+  "citybus.skin.hero": {
+    "name": "citybus.skin.hero",
+    "mapTo": "citybus.skin.hero",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "diffuseMapUseUV": null,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "vehicles/citybus/citybus_skin_hero.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/citybus/citybus_main_cc.data.png",
+        "clearCoatRoughnessFactor": 0.0500000007,
+        "diffuseMapUseUV": 1,
+        "metallicFactor": 0.699999988,
+        "normalMap": "/vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png"
+      },
+      {
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "diffuseMapUseUV": null,
+        "metallicFactor": null
+      },
+      {
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "diffuseMapUseUV": null,
+        "metallicFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus.skin.metro": {
+    "name": "citybus.skin.metro",
+    "mapTo": "citybus.skin.metro",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "vehicles/citybus/citybus_skin_metro.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/citybus/citybus_main_cc.data.png",
+        "colorPaletteMap": "vehicles/citybus/citybus_skin_metro_palette.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png"
+      },
+      {
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null
+      },
+      {
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus.skin.safari": {
+    "name": "citybus.skin.safari",
+    "mapTo": "citybus.skin.safari",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "metallicMapUseUV": null,
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "vehicles/citybus/citybus_skin_dirt_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/citybus/citybus_main_cc.data.png",
+        "colorPaletteMap": "vehicles/citybus/citybus_skin_safari_palette_uv1.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_skin_safari_m.data.png",
+        "metallicMapUseUV": 1,
+        "normalMap": "/vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png"
+      },
+      {
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "metallicMapUseUV": null
+      },
+      {
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null,
+        "metallicMapUseUV": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus.skin.transit": {
+    "name": "citybus.skin.transit",
+    "mapTo": "citybus.skin.transit",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "vehicles/citybus/citybus_skin_transit_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/citybus/citybus_main_cc.data.png",
+        "colorPaletteMap": "vehicles/citybus/citybus_skin_transit_palette_uv1.color.png",
+        "colorPaletteMapUseUV": 1,
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png"
+      },
+      {
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null
+      },
+      {
+        "clearCoatFactor": null,
+        "colorPaletteMapUseUV": null,
+        "diffuseMapUseUV": null,
+        "instanceDiffuse": null,
+        "metallicFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus.skin.zebra": {
+    "name": "citybus.skin.zebra",
+    "mapTo": "citybus.skin.zebra",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "diffuseMapUseUV": null,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorMap": "vehicles/citybus/citybus_skin_zebra_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/citybus/citybus_main_cc.data.png",
+        "clearCoatRoughnessFactor": 0.0500000007,
+        "diffuseMapUseUV": 1,
+        "metallicFactor": 0.699999988,
+        "normalMap": "/vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png"
+      },
+      {
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "diffuseMapUseUV": null,
+        "metallicFactor": null
+      },
+      {
+        "clearCoatFactor": null,
+        "clearCoatRoughnessFactor": null,
+        "diffuseMapUseUV": null,
+        "metallicFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_seats.skin_seats.seats_colored1": {
+    "name": "citybus_seats.skin_seats.seats_colored1",
+    "mapTo": "citybus_seats.skin_seats.seats_colored1",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_colored_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "clearCoatFactor": 1,
+        "colorPaletteMap": "/vehicles/citybus/citybus_intdetail_colored1_p.color.png",
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_intdetail_colored_c.data.png",
+        "paletteClearCoat": false,
+        "paletteClearCoatRoughness": false,
+        "paletteMetallic": false,
+        "paletteRoughness": false,
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_seats.skin_seats.seats_colored2": {
+    "name": "citybus_seats.skin_seats.seats_colored2",
+    "mapTo": "citybus_seats.skin_seats.seats_colored2",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_colored_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "clearCoatFactor": 1,
+        "colorPaletteMap": "/vehicles/citybus/citybus_intdetail_colored2_p.color.png",
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_intdetail_colored_c.data.png",
+        "paletteClearCoat": false,
+        "paletteClearCoatRoughness": false,
+        "paletteMetallic": false,
+        "paletteRoughness": false,
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_seats.skin_seats.seats_colored3": {
+    "name": "citybus_seats.skin_seats.seats_colored3",
+    "mapTo": "citybus_seats.skin_seats.seats_colored3",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_colored_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "clearCoatFactor": 1,
+        "colorPaletteMap": "/vehicles/citybus/citybus_intdetail_colored3_p.color.png",
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_intdetail_colored_c.data.png",
+        "paletteClearCoat": false,
+        "paletteClearCoatRoughness": false,
+        "paletteMetallic": false,
+        "paletteRoughness": false,
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {
+      },
+      {
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_seats.skin_seats.seats_metro": {
+    "name": "citybus_seats.skin_seats.seats_metro",
+    "mapTo": "citybus_seats.skin_seats.seats_metro",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_metro_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "clearCoatFactor": 1,
+        "colorPaletteMap": "/vehicles/citybus/citybus_intdetail_metro_p.color.png",
+        "diffuseMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_intdetail_colored_c.data.png",
+        "paletteClearCoat": false,
+        "paletteClearCoatRoughness": false,
+        "paletteMetallic": false,
+        "paletteRoughness": false,
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {
+      },
+      {
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_seats.skin_seats.seats_safari": {
+    "name": "citybus_seats.skin_seats.seats_safari",
+    "mapTo": "citybus_seats.skin_seats.seats_safari",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_safari_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "activeLayers": 1,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_seats.skin_seats.seats_standard": {
+    "name": "citybus_seats.skin_seats.seats_standard",
+    "mapTo": "citybus_seats.skin_seats.seats_standard",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "activeLayers": 1,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_seats.skin_seats.seats_zebra": {
+    "name": "citybus_seats.skin_seats.seats_zebra",
+    "mapTo": "citybus_seats.skin_seats.seats_zebra",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_intdetail_ao.data.png",
+        "baseColorMap": "/vehicles/citybus/citybus_intdetail_zebra_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_intdetail_m.data.png",
+        "normalMap": "/vehicles/citybus/citybus_intdetail_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_intdetail_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "activeLayers": 1,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_sign.skin_signtype.flipdot": {
+    "name": "citybus_sign.skin_signtype.flipdot",
+    "mapTo": "citybus_sign.skin_signtype.flipdot",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorFactor": [
+          0.920000017,
+          1.12,
+          0.0799999982,
+          1
+        ],
+        "baseColorMap": "@busDestinationDsp",
+        "diffuseMapUseUV": 1,
+        "emissiveFactor": [
+          0.920000017,
+          1.12,
+          0.0799999982
+        ],
+        "emissiveMap": "@busDestinationDsp",
+        "emissiveMapUseUV": 1,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_sign.skin_signtype.led_orange": {
+    "name": "citybus_sign.skin_signtype.led_orange",
+    "mapTo": "citybus_sign.skin_signtype.led_orange",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorFactor": [
+          1.75,
+          0.819999993,
+          0,
+          1
+        ],
+        "baseColorMap": "@busDestinationDsp",
+        "diffuseMapUseUV": 1,
+        "emissiveFactor": [
+          1.75,
+          0.819999993,
+          0
+        ],
+        "emissiveMap": "@busDestinationDsp",
+        "emissiveMapUseUV": 1,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_sign_dmg.skin_signtype.flipdot": {
+    "name": "citybus_sign_dmg.skin_signtype.flipdot",
+    "mapTo": "citybus_sign_dmg.skin_signtype.flipdot",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorFactor": [
+          0.920000017,
+          1.12,
+          0.0799999982,
+          1
+        ],
+        "baseColorMap": "@busDestinationDsp",
+        "diffuseMapUseUV": 1,
+        "emissiveFactor": [
+          0.920000017,
+          1.12,
+          0.0799999982
+        ],
+        "emissiveMap": "@busDestinationDsp",
+        "emissiveMapUseUV": 1,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "diffuseMapUseUV": null,
+        "emissiveFactor": null,
+        "emissiveMapUseUV": null,
+        "metallicFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "citybus_sign_dmg.skin_signtype.led_orange": {
+    "name": "citybus_sign_dmg.skin_signtype.led_orange",
+    "mapTo": "citybus_sign_dmg.skin_signtype.led_orange",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/citybus/citybus_main_ao.data.png",
+        "baseColorFactor": null,
+        "baseColorMap": "/vehicles/citybus/citybus_main_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/citybus/citybus_main_m.data.png",
+        "normalMap": "vehicles/citybus/citybus_main_n.normal.png",
+        "opacityMap": "/vehicles/citybus/citybus_main_c.data.png",
+        "roughnessMap": "/vehicles/citybus/citybus_main_r.data.png"
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      }
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  }
+}
