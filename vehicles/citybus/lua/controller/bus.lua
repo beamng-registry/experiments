@@ -156,7 +156,7 @@ local function updateGFX(dt)
     if rightAxleTargetHeight < M.defaultSuspensionTargetHeight - kneelHeightReduction * 0.5 then
       -- target height was reduced; we must be kneeling
       M.isKneeling = true
-    elseif rightAxleHeight >= M.defaultSuspensionTargetHeight - kneelHeightReduction * 0.15 then
+    elseif rightAxleHeight >= M.defaultSuspensionTargetHeight - kneelHeightReduction * 0.5 then
       -- actual height is less than 15% of kneelHeightReduction below normal height; we stopped kneeling
 
       if M.isKneeling then
