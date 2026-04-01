@@ -17,7 +17,7 @@
     ],
     "gearbox": {
         "uiName":"Gearbox",
-        "gearRatios":[-5.03, 0, 4.0, 3.2, 2.56, 2.04, 1.63, 1.20],
+        "gearRatios":[-5.03, 0, 4.0, 3.1, 2.46, 1.84, 1.53, 1.20],
         "friction": 4.69,
         "dynamicFriction": 0.0047,
         "torqueLossCoef": 0.016,

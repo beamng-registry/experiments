@@ -37,7 +37,7 @@
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brake properties
-        {"brakeTorque":"$=$brakestrength*24000"},
+        {"brakeTorque":"$=$brakestrength*18000"},
         {"parkingTorque":0},
         {"brakeSpring":200},
 
@@ -88,7 +88,7 @@
     "pressureWheels": [
         ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
         //brake properties
-        {"brakeTorque":"$=$brakestrength*32000"},
+        {"brakeTorque":"$=$brakestrength*24000"},
         {"parkingTorque":0},
         {"brakeSpring":200},
 
